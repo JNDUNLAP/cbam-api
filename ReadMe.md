@@ -1,4 +1,4 @@
-# CBAM API Project
+# CBAM API
 
 This project provides a RESTful API for managing quarterly reports using the CBAM (Carbon Border Adjustment Mechanism) framework.
 
@@ -6,27 +6,7 @@ This project provides a RESTful API for managing quarterly reports using the CBA
 
 ### 1. Install GoLang
 
-GoLang is required for running this project. If you haven't already installed GoLang, follow these steps:
-
-- Download the installer for your operating system from the [official GoLang website](https://golang.org/dl/).
-- Follow the installation instructions provided.
-
-### 2. Set Up Workspace
-
-Create a workspace directory for your Go projects. By convention, this directory is often named `go` and is placed in your home directory. Within this directory, you can create subdirectories for your Go projects.
-
-```bash
-mkdir ~/go
-```
-
-### 3. Set Up GOPATH
-
-Set the `GOPATH` environment variable to point to your workspace directory. You can add this to your shell profile (`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, etc.) to make it persistent.
-
-```bash
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-```
+Install from the offical site here: 'https://go.dev/doc/install'
 
 ### 4. Clone the Repository
 
@@ -60,8 +40,10 @@ The API server should now be running locally.
 You can test the API by sending requests to `http://localhost:8080` using tools like cURL, Postman, or your preferred HTTP client.
 
 ## Future Roadmap
-
-- Implement user authentication and authorization.
-- Add support for exporting reports to various formats (XML, JSON, CSV).
-- Enhance error handling and logging.
-- Improve API documentation and code comments.
+- Something you suggest 
+- Implement user auth
+- Add reportId validation
+- Add reportID generation
+- Add report modification support
+- Enhance error handling and logging
+- Improve API documentation and code comments
