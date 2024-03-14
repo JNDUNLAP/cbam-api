@@ -1,0 +1,62 @@
+package database
+
+import (
+	"context"
+	"dunlap/model"
+	"fmt"
+	"log"
+	"os"
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+)
+
+type MongoDBClient struct {
+	Client       *mongo.Client
+	DatabaseName string
+}
+
+func NewMongoDBClient(uri, databaseName string) (*MongoDBClient, error) {
+	clientOptions := options.Client().ApplyURI(uri)
+	client, err := mongo.Connect(context.Background(), clientOptions)
+	if err != nil {
+		return nil, fmt.Errorf("error connecting to MongoDB: %w", err)
+	}
+	err = client.Ping(context.Background(), nil)
+	if err != nil {
+		return nil, fmt.Errorf("failed to ping MongoDB: %w", err)
+	}
+	return &MongoDBClient{
+		Client:       client,
+		DatabaseName: databaseName,
+	}, nil
+}
+
+func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
+	var qReport model.QReport
+	collection := m.Client.Database(m.DatabaseName).Collection("test_report")
+
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
+	err := collection.FindOne(ctx, filter).Decode(&qReport)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			return model.QReport{}, fmt.Errorf("no document found with the provided filter")
+		}
+		log.Println(err)
+		return model.QReport{}, fmt.Errorf("error fetching document: %w", err)
+	}
+	log.Println(qReport)
+	return qReport, nil
+}
+
+func SetupDatabase() *MongoDBClient {
+	client, err := NewMongoDBClient(os.Getenv("URI"), "pontis")
+	if err != nil {
+		log.Fatalf("Failed to connect to MongoDB: %v", err)
+	}
+	return client
+}
