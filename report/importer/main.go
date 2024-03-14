@@ -1,7 +1,7 @@
 package importer
 
 import (
-	"dunlap/database"
+	"dunlap/data"
 	"dunlap/errors"
 	"dunlap/model"
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func GetImporter(dbClient *database.MongoDBClient) http.HandlerFunc {
+func GetImporter(dbClient *data.MongoDBClient) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		reportID := r.URL.Query().Get("reportID")
 		if reportID == "" {
@@ -27,7 +27,7 @@ func GetImporter(dbClient *database.MongoDBClient) http.HandlerFunc {
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusInternalServerError,
 				Message:     "Internal Server Error",
-				ErrorDetail: "Failed to fetch the report from the database.",
+				ErrorDetail: "Failed to fetch the report from the data.",
 			})
 			return
 		}
@@ -45,12 +45,12 @@ func GetImporter(dbClient *database.MongoDBClient) http.HandlerFunc {
 // // UpdateImporter updates the importer information for a specific quarterly report
 // func UpdateImporter(c echo.Context) error {
 // 	id := c.Param("id")
-// 	// Simulated logic for updating importer info; replace with actual database update logic
+// 	// Simulated logic for updating importer info; replace with actual data update logic
 // 	updatedImporter := map[string]interface{}{} // Placeholder for importer data
 // 	if err := c.Bind(&updatedImporter); err != nil {
 // 		return err
 // 	}
-// 	// Example data; in a real application, you would update this in a database
+// 	// Example data; in a real application, you would update this in a data
 // 	updatedImporter["reportID"] = id
 // 	return c.JSON(http.StatusOK, updatedImporter)
 // }

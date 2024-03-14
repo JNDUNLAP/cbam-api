@@ -1,7 +1,7 @@
 package authority
 
 import (
-	"dunlap/database"
+	"dunlap/data"
 	"dunlap/errors"
 	"dunlap/model"
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func GetNationalCompetentAuth(dbClient *database.MongoDBClient) http.HandlerFunc {
+func GetNationalCompetentAuth(dbClient *data.MongoDBClient) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		reportID := r.URL.Query().Get("reportID")
 		if reportID == "" {
@@ -27,7 +27,7 @@ func GetNationalCompetentAuth(dbClient *database.MongoDBClient) http.HandlerFunc
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusInternalServerError,
 				Message:     "Internal Server Error",
-				ErrorDetail: "Failed to fetch the report from the database.",
+				ErrorDetail: "Failed to fetch the report from the data.",
 			})
 			return
 		}

@@ -1,19 +1,14 @@
 package main
 
 import (
-	"dunlap/database"
+	"dunlap/data"
 	"dunlap/routes"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/joho/godotenv"
 )
-
-func main() {
-	loadEnv()
-	client := database.SetupDatabase()
-	server(client)
-}
 
 func loadEnv() {
 	if err := godotenv.Load(); err != nil {
@@ -21,12 +16,20 @@ func loadEnv() {
 	}
 }
 
-func server(client *database.MongoDBClient) {
+func server(client *data.MongoDBClient) {
 	http.HandleFunc("/api/ping", routes.PingHandler)
 	http.HandleFunc("/api/upload", routes.UploadHandler(client))
+	routes.QuarterlyReportGroup(client)
 	routes.SupportingDocumentsGroup(client)
-	// http.HandleFunc("/quarterly-reports/:id/declarant", declarant.UpdateDeclarant)
+
 	port := routes.GetServerPort()
 	log.Printf("Server starting on port %s", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
+}
+
+func main() {
+	loadEnv()
+
+	client := data.SetupDatabase(os.Getenv("URI"), os.Getenv("DB_NAME"))
+	server(client)
 }

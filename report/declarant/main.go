@@ -1,7 +1,7 @@
 package declarant
 
 import (
-	"dunlap/database"
+	"dunlap/data"
 	"dunlap/errors"
 	"dunlap/model"
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func GetReportDeclarant(client *database.MongoDBClient) http.HandlerFunc {
+func GetReportDeclarant(client *data.MongoDBClient) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method != http.MethodGet {
