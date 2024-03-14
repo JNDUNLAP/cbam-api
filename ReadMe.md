@@ -1,6 +1,6 @@
 # CBAM API
 
-This project provides a RESTful API for managing quarterly reports using the CBAM (Carbon Border Adjustment Mechanism) framework.
+This project provides a RESTful API for the EU's CBAM (Carbon Border Adjustment Mechanism) reporting schema.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Install from the offical site here: 'https://go.dev/doc/install'
 Clone this repository into your Go workspace:
 
 ```bash
-git clone https://github.com/yourusername/cbam-api.git ~/go/src/github.com/yourusername/cbam-api
+git clone https://github.com/jndunlap/cbam-api.git 
 ```
 
 ### 5. Install Dependencies
@@ -27,7 +27,7 @@ go mod download
 
 ### 6. Run
 
-run the project:
+Run the project:
 
 ```bash
 air
@@ -43,7 +43,7 @@ You can test the API by sending requests to `http://localhost:8080` using tools 
 - Something you suggest 
 - Implement user auth
 - Add reportId validation
-- Add reportID generation
+- Add reportId generation
 - Add report modification support
 - Enhance error handling and logging
 - Improve API documentation and code comments
