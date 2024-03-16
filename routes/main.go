@@ -15,7 +15,6 @@ import (
 )
 
 func QuarterlyReportGroup(client *data.MongoDBClient) {
-
 	http.HandleFunc(
 		"/quarterly-reports/:reportID",
 		reports.GetQuarterlyReport(client),
@@ -36,43 +35,54 @@ func QuarterlyReportGroup(client *data.MongoDBClient) {
 }
 
 func GoodsEmissionsGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:id/imported-goods/:goodId/emissions", emissions.GetGoodsEmissions(client))
-	// e.PUT("/quarterly-reports/:id/imported-goods/:goodId/emissions", emissions.UpdateGoodsEmissions)
+	http.HandleFunc(
+		"/quarterly-reports/:id/imported-goods/:goodId/emissions",
+		emissions.GetGoodsEmissions(client),
+	)
+
 }
 
 func ImportedGoodsGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:id/imported-goods", goods.GetImportedGoods(client))
-	// e.POST("/quarterly-reports/:id/imported-goods", goods.AddImportedGood)
-	// e.PUT("/quarterly-reports/:id/imported-goods/:goodId", goods.UpdateImportedGood)
-	// e.DELETE("/quarterly-reports/:id/imported-goods/:goodId", goods.DeleteImportedGood)
+	http.HandleFunc(
+		"/quarterly-reports/:id/imported-goods",
+		goods.GetImportedGoods(client),
+	)
+
 }
 
 func ImporterGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:id/importer", importer.GetImporter(client))
-	// e.PUT("/quarterly-reports/:id/importer", importer.UpdateImporter)
+	http.HandleFunc(
+		"/quarterly-reports/:id/importer",
+		importer.GetImporter(client),
+	)
 }
 
 func RemarksEmissionsGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:reportID/imported-goods/:goodID/remarks-emissions", remarks.GetRemarksEmissions(client))
-	// e.PUT("/quarterly-reports/:reportID/imported-goods/:goodID/remarks-emissions", remarks.UpdateRemarksEmissions)
+	http.HandleFunc(
+		"/quarterly-reports/:reportID/imported-goods/:goodID/remarks-emissions",
+		remarks.GetRemarksEmissions(client),
+	)
 }
 
 func NationalCompetentAuthGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:id/national-competent-auth", authority.GetNationalCompetentAuth(client))
-	// e.PUT("/quarterly-reports/:id/national-competent-auth", signatures.UpdateNationalCompetentAuth)
+	http.HandleFunc(
+		"/quarterly-reports/:id/national-competent-auth",
+		authority.GetNationalCompetentAuth(client),
+	)
 }
 
 func SignaturesGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:id/signatures", signatures.GetSignatures(client))
-	// e.PUT("/quarterly-reports/:id/signatures", signatures.UpdateSignatures)
+	http.HandleFunc(
+		"/quarterly-reports/:id/signatures",
+		signatures.GetSignatures(client),
+	)
 }
 
 func SupportingDocumentsGroup(client *data.MongoDBClient) {
-	http.HandleFunc("/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents", documents.GetSupportingDocuments(client))
-	// // e.POST("/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents", documents.AddSupportingDocument)
-	// // e.GET("/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents/:docID", documents.GetSupportingDocument)
-	// // e.PUT("/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents/:docID", documents.UpdateSupportingDocument)
-	// // e.DELETE("/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents/:docID", documents.DeleteSupportingDocument)
+	http.HandleFunc(
+		"/quarterly-reports/:reportID/imported-goods/:goodID/supporting-documents",
+		documents.GetSupportingDocuments(client),
+	)
 }
 
 func UploadHandler(client *data.MongoDBClient) http.HandlerFunc {

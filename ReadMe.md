@@ -1,12 +1,12 @@
 # CBAM API
 
-This project provides a RESTful API for the EU's CBAM (Carbon Border Adjustment Mechanism) reporting schema.
+Directly plug EU CBAM XML reports into your systems. Turn complex data into clear, actionable endpoints.
 
 ## Installation
 
-### 1. Install GoLang
+#### Installing Go
 
-Install from the offical site here: 'https://go.dev/doc/install'
+[Install Go](https://go.dev/doc/install)
 
 ### 4. Clone the Repository
 
