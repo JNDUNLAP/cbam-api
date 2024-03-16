@@ -4,11 +4,9 @@ Directly plug EU CBAM XML reports into your systems. Turn complex data into clea
 
 ## Installation
 
-#### Installing Go
-
 [Install Go](https://go.dev/doc/install)
 
-### 4. Clone the Repository
+## Clone the Repository
 
 Clone this repository into your Go workspace:
 
@@ -16,7 +14,7 @@ Clone this repository into your Go workspace:
 git clone https://github.com/jndunlap/cbam-api.git 
 ```
 
-### 5. Install Dependencies
+## Install Dependencies
 
 Navigate to the project directory and install dependencies:
 
@@ -25,7 +23,7 @@ cd ~/go/src/github.com/jndunlap/cbam-api
 go mod download
 ```
 
-### 6. Run
+## Run
 
 Run the project:
 
@@ -34,10 +32,6 @@ air
 ```
 
 The API server should now be running locally.
-
-### 7. Verify Installation
-
-You can test the API by sending requests to `http://localhost:8080` using tools like cURL, Postman, or your preferred HTTP client.
 
 ## Future Roadmap
 - Something you suggest 
