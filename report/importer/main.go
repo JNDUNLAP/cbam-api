@@ -41,16 +41,3 @@ func GetImporter(dbClient *data.MongoDBClient) http.HandlerFunc {
 		}
 	}
 }
-
-// // UpdateImporter updates the importer information for a specific quarterly report
-// func UpdateImporter(c echo.Context) error {
-// 	id := c.Param("id")
-// 	// Simulated logic for updating importer info; replace with actual data update logic
-// 	updatedImporter := map[string]interface{}{} // Placeholder for importer data
-// 	if err := c.Bind(&updatedImporter); err != nil {
-// 		return err
-// 	}
-// 	// Example data; in a real application, you would update this in a data
-// 	updatedImporter["reportID"] = id
-// 	return c.JSON(http.StatusOK, updatedImporter)
-// }

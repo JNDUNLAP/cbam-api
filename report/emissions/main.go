@@ -42,8 +42,3 @@ func GetGoodsEmissions(dbClient *data.MongoDBClient) http.HandlerFunc {
 		}
 	}
 }
-
-// func UpdateGoodsEmissions(c echo.Context) error {
-// 	// Implement logic to update emissions data for a good
-// 	return c.String(http.StatusOK, "Goods emissions data updated")
-// }

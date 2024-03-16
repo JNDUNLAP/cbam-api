@@ -49,26 +49,3 @@ func GetSupportingDocuments(dbClient *data.MongoDBClient) http.HandlerFunc {
 		}
 	}
 }
-
-// func AddSupportingDocument(c echo.Context) error {
-// 	// Implement logic to add a new supporting document
-// 	return c.String(http.StatusOK, "Supporting document added")
-// }
-
-// // GetSupportingDocument fetches a specific supporting document for an imported good.
-// func GetSupportingDocument(c echo.Context) error {
-// 	// Implement logic to fetch a specific supporting document
-// 	return c.String(http.StatusOK, "Supporting document fetched")
-// }
-
-// // UpdateSupportingDocument updates a specific supporting document for an imported good.
-// func UpdateSupportingDocument(c echo.Context) error {
-// 	// Implement logic to update a specific supporting document
-// 	return c.String(http.StatusOK, "Supporting document updated")
-// }
-
-// // DeleteSupportingDocument deletes a specific supporting document for an imported good.
-// func DeleteSupportingDocument(c echo.Context) error {
-// 	// Implement logic to delete a specific supporting document
-// 	return c.String(http.StatusOK, "Supporting document deleted")
-// }

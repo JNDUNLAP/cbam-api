@@ -41,9 +41,3 @@ func GetNationalCompetentAuth(dbClient *data.MongoDBClient) http.HandlerFunc {
 		}
 	}
 }
-
-// // UpdateNationalCompetentAuth handles updating details of a National Competent Authority.
-// func UpdateNationalCompetentAuth(c echo.Context) error {
-// 	// Implement logic to update National Competent Authority details
-// 	return c.String(http.StatusOK, "National Competent Authority updated")
-// }

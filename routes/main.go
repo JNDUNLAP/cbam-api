@@ -31,8 +31,8 @@ func QuarterlyReportGroup(client *data.MongoDBClient) {
 		reports.CreateQuarterlyReport(client),
 	)
 
-	// e.PUT("/quarterly-reports/:id", reports.UpdateQuarterlyReport)
-	// e.DELETE("/quarterly-reports/:id", reports.DeleteQuarterlyReport)
+	http.HandleFunc("/quarterly-reports/delete:id",
+		reports.DeleteAllQuarterlyReports(client))
 }
 
 func GoodsEmissionsGroup(client *data.MongoDBClient) {

@@ -63,6 +63,15 @@ func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, coll
 	return nil
 }
 
+// DeleteAllQReports deletes all quarterly reports in the specified collection.
+func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
+	_, err := m.Client.Database(m.dataName).Collection(collectionName).DeleteMany(context.Background(), bson.M{})
+	if err != nil {
+		return fmt.Errorf("failed to delete all quarterly reports: %w", err)
+	}
+	return nil
+}
+
 func SetupDatabase(MongoUri, dataName string) *MongoDBClient {
 	client, err := NewMongoDBClient(MongoUri, dataName)
 	if err != nil {

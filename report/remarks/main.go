@@ -41,9 +41,3 @@ func GetRemarksEmissions(dbClient *data.MongoDBClient) http.HandlerFunc {
 		}
 	}
 }
-
-// // UpdateRemarksEmissions handles updating remarks on emissions for a specific imported good.
-// func UpdateRemarksEmissions(c echo.Context) error {
-// 	// Implement logic to update remarks on emissions for a good
-// 	return c.String(http.StatusOK, "Remarks on emissions updated")
-// }
