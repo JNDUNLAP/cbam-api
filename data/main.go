@@ -17,6 +17,10 @@ type MongoDBClient struct {
 	dataName string
 }
 
+type ReportRepository interface {
+	GetQReport(filter interface{}) (*model.QReport, error)
+}
+
 func NewMongoDBClient(uri, dataName string) (*MongoDBClient, error) {
 	clientOptions := options.Client().ApplyURI(uri)
 	client, err := mongo.Connect(context.Background(), clientOptions)
