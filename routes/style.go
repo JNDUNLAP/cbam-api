@@ -1,16 +1,11 @@
 package routes
 
-import "fmt"
-
-var methodColors = map[string]string{
-	"GET":    "\033[32m", // Green
-	"POST":   "\033[36m", // Blue
-	"PUT":    "\033[34m", // Cyan
-	"DELETE": "\033[31m", // Red
-	"PATCH":  "\033[33m", // Yellow
-}
-
-const resetColor = "\033[0m"
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"time"
+)
 
 func (r *Router) ListRoutes() {
 	fmt.Println("\nCBAM API Routes\n---------------------------------------------")
@@ -22,12 +17,44 @@ func (r *Router) ListRoutes() {
 	for groupName, routes := range groupMap {
 		fmt.Printf("\n%s\n", groupName)
 		for _, route := range routes {
-			methodColor, ok := methodColors[route.method]
-			if !ok {
-				methodColor = ""
-			}
-			fmt.Printf("%s%-6s%s %s\n", methodColor, route.method, resetColor, route.rawPattern)
+
+			fmt.Printf("%s %s\n", route.method, route.rawPattern)
 		}
 	}
 	fmt.Println()
+}
+
+const (
+	colorReset  = "\033[0m"
+	colorRed    = "\033[31m"
+	colorGreen  = "\033[32m"
+	colorYellow = "\033[33m"
+	colorBlue   = "\033[34m"
+)
+
+func colorizeStatusCode(statusCode int) string {
+	switch {
+	case statusCode >= 200 && statusCode < 300:
+		return fmt.Sprintf("%s%d%s", colorGreen, statusCode, colorReset)
+	case statusCode >= 300 && statusCode < 400:
+		return fmt.Sprintf("%s%d%s", colorBlue, statusCode, colorReset)
+	case statusCode >= 400 && statusCode < 500:
+		return fmt.Sprintf("%s%d%s", colorYellow, statusCode, colorReset)
+	case statusCode >= 500:
+		return fmt.Sprintf("%s%d%s", colorRed, statusCode, colorReset)
+	default:
+		return fmt.Sprintf("%d", statusCode)
+	}
+}
+
+func LogRequest(handler HandlerFunc) HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
+		start := time.Now()
+		wrappedWriter := NewResponseWriter(w)
+		handler(wrappedWriter, r, params)
+		duration := time.Since(start)
+
+		log.Printf("[%s]: [%s], Duration: [%v]  -  %s",
+			r.Method, colorizeStatusCode(wrappedWriter.statusCode), duration, r.URL.Path)
+	}
 }

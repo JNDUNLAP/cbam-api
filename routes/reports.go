@@ -8,6 +8,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -16,6 +17,7 @@ import (
 func GetQuarterlyReport(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]
+		log.Println(reportID)
 		if reportID == "" {
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusBadRequest,

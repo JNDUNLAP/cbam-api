@@ -10,34 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetSupportingDocuments retrieves supporting documents for a specific good in a report.
-// swagger:operation GET /reports/{id}/imported-goods/{goodId}/supporting-documents supportingDocuments getSupportingDocuments
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report
-//   required: true
-//   type: string
-// - name: goodId
-//   in: path
-//   description: The ID of the imported good within the report
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved supporting documents for the specified good
-//     schema:
-//       type: array
-//       items:
-//         $ref: '#/definitions/SupportingDocument'
-//   "400":
-//     description: Bad request, such as missing report ID or good ID, with additional hints for resolution
-//   "500":
-//     description: Internal server error
-
 func GetSupportingDocuments(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]

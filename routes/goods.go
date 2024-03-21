@@ -10,29 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetImportedGoods retrieves details about imported goods for a specific report.
-// swagger:operation GET /reports/{id}/imported-goods importedGoods getImportedGoods
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report to fetch imported goods details for
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved imported goods details
-//     schema:
-//       type: array
-//       items:
-//         $ref: '#/definitions/ImportedGood'
-//   "400":
-//     description: Bad request, such as missing report ID
-//   "500":
-//     description: Internal server error
-
 func GetImportedGoods(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]

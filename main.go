@@ -17,9 +17,8 @@ func loadEnv() {
 }
 
 func server(client *data.MongoDBClient) {
-	// http.HandleFunc("/api/ping", routes.PingHandler)
-	// http.HandleFunc("/api/upload", routes.UploadHandler(client))
 	router := routes.NewRouter()
+
 	routes.QuarterlyReportGroup(router, client)
 	routes.DeclarantGroup(router, client)
 	routes.NationalCompetentAuthGroup(router, client)
@@ -28,9 +27,13 @@ func server(client *data.MongoDBClient) {
 	routes.SignaturesGroup(router, client)
 	routes.GoodsEmissionsGroup(router, client)
 	routes.SupportingDocumentsGroup(router, client)
+	routes.FileGroup(router, client)
+
 	router.ListRoutes()
+
 	port := routes.GetServerPort()
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Printf("CBAM API is Running on PORT %s", port)
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
 
 func main() {

@@ -10,29 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetGoodsEmissions retrieves emissions data for the goods in a specific report.
-// swagger:operation GET /reports/{id}/imported-goods/emissions goodsEmissions getGoodsEmissions
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report to fetch goods emissions details for
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved goods emissions details
-//     schema:
-//       type: array
-//       items:
-//         $ref: '#/definitions/GoodsEmission'
-//   "400":
-//     description: Bad request, such as missing report ID, with additional hints provided for resolution
-//   "500":
-//     description: Internal server error
-
 func GetGoodsEmissions(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]

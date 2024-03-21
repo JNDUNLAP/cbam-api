@@ -10,29 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetSignatures retrieves signatures associated with a specific quarterly report by its ID.
-// swagger:operation GET /reports/{id}/signatures signatures getSignatures
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report for which to fetch signatures
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved signatures for the quarterly report
-//     schema:
-//       type: array
-//       items:
-//         $ref: '#/definitions/Signature'
-//   "400":
-//     description: Bad request, such as missing report ID
-//   "500":
-//     description: Internal server error
-
 func GetSignatures(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 

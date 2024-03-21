@@ -10,27 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetNationalCompetentAuth retrieves national competent authority information for a specific report.
-// swagger:operation GET /reports/{id}/national-competent-auth nationalCompetentAuth getNationalCompetentAuth
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report to fetch national competent authority information for
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved national competent authority information
-//     schema:
-//       $ref: '#/definitions/NationalCompetentAuthority'
-//   "400":
-//     description: Bad request, such as missing report ID
-//   "500":
-//     description: Internal server error
-
 func GetNationalCompetentAuth(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]

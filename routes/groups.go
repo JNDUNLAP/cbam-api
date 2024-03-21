@@ -39,3 +39,8 @@ func NationalCompetentAuthGroup(router *Router, client *data.MongoDBClient) {
 func SupportingDocumentsGroup(router *Router, client *data.MongoDBClient) {
 	router.Handle("Documents", "GET", "/reports/{id}/imported-goods/{goodId}/supporting-documents", GetSupportingDocuments(client))
 }
+
+func FileGroup(router *Router, client *data.MongoDBClient) {
+	router.Handle("Files", "POST", "/api/upload", UploadHandler(client))
+
+}

@@ -10,34 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetRemarksEmissions retrieves remarks and emissions details for imported goods in a specific report.
-// swagger:operation GET /reports/{id}/imported-goods/{goodId}/remarks-emissions remarksEmissions getRemarksEmissions
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report to fetch remarks and emissions details for
-//   required: true
-//   type: string
-// - name: goodId
-//   in: path
-//   description: The ID of the imported good within the report
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved remarks and emissions for the specified imported good
-//     schema:
-//       type: array
-//       items:
-//         $ref: '#/definitions/RemarkEmission'
-//   "400":
-//     description: Bad request, such as missing report ID or good ID
-//   "500":
-//     description: Internal server error
-
 func GetRemarksEmissions(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]

@@ -10,29 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetReportDeclarant retrieves declarant information for a specific report.
-// swagger:operation GET /reports/{id}/declarant declarant getReportDeclarant
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the report for which to retrieve declarant information
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved declarant information
-//     schema:
-//       $ref: '#/definitions/Declarant'
-//   "400":
-//     description: Bad request, such as missing report ID, with hints for resolution
-//   "405":
-//     description: Method not allowed, this endpoint only supports GET requests
-//   "500":
-//     description: Internal server error
-
 func GetReportDeclarant(repo data.ReportRepository) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 
