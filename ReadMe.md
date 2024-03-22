@@ -1,8 +1,18 @@
 # CBAM API
 
-Directly plug EU CBAM XML reports into your systems. Turn complex data into clear, actionable endpoints.
+![Successful XML File Upload](https://postimg.cc/6TZ0DyRm)
 
-## Installation
+The CBAM API enables seamless integration of EU CBAM XML reports into your systems, transforming complex XML data into clear, actionable endpoints. Designed for developers and enterprises alike, this API simplifies the handling of carbon pricing data, making it accessible and actionable.
+
+## Features
+
+- **Simple Integration**: Easy setup allows for direct integration into existing systems.
+- **Actionable Endpoints**: Convert complex XML data into clear and concise information.
+- **EU CBAM Compliance**: Assists with compliance with the EU Carbon Border Adjustment Mechanism (CBAM).
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
 
 [Install Go](https://go.dev/doc/install)
 
