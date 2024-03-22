@@ -1,6 +1,6 @@
 # CBAM API
 
-![Successful XML File Upload](https://i.postimg.cc/bYCBSnvp/CBAMAPI.png)](https://postimg.cc/6TZ0DyRm)
+![Successful XML File Upload](https://i.postimg.cc/bYCBSnvp/CBAMAPI.png)
 
 
 ## Features
@@ -39,11 +39,3 @@ Run the project:
 air
 ```
 
-
-
-
-
-- Add reportId generation
-- Add report modification support
-- Enhance error handling and logging
-- Improve API documentation and code comments
