@@ -1,7 +1,41 @@
 # CBAM API
+```bash
+CBAM API Routes
+---------------------------------------------
 
-![Successful XML File Upload](https://i.postimg.cc/bYCBSnvp/CBAMAPI.png)](https://postimg.cc/6TZ0DyRm)
+NationalCompetentAuth
+GET /reports/{id}/national-competent-auth
 
+Signatures
+GET /reports/{id}/signatures
+
+GoodsEmissions
+GET /reports/{id}/imported-goods/emissions
+
+Declarant
+GET /reports/{id}/declarent
+
+Importer
+GET /reports/{id}/importer
+
+ImportedGoods
+GET /reports/{id}/imported-goods
+
+Documents
+GET /reports/{id}/imported-goods/{goodId}/supporting-documents
+
+Files
+POST /api/upload
+
+QuarterlyReports
+GET /reports
+GET /reports/{id}
+POST /reports/create
+DELETE /reports/delete/{id}
+
+2024/03/22 17:07:32 CBAM API is Running on PORT 8080
+2024/03/22 17:08:03 [POST]: [200], Duration: [1.113584ms]  -  /api/upload
+```
 
 ## Features
 

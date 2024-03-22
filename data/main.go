@@ -21,7 +21,7 @@ type ReportRepository interface {
 	GetQReport(filter interface{}) (*model.QReport, error)
 }
 
-func NewMongoDBClient(uri, dataName string) (*MongoDBClient, error) {
+func DBClient(uri, dataName string) (*MongoDBClient, error) {
 	clientOptions := options.Client().ApplyURI(uri)
 	client, err := mongo.Connect(context.Background(), clientOptions)
 	if err != nil {
@@ -52,7 +52,6 @@ func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
 		log.Println(err)
 		return model.QReport{}, fmt.Errorf("error fetching document: %w", err)
 	}
-	log.Println(qReport)
 	return qReport, nil
 }
 
@@ -67,7 +66,6 @@ func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, coll
 	return nil
 }
 
-// DeleteAllQReports deletes all quarterly reports in the specified collection.
 func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
 	_, err := m.Client.Database(m.dataName).Collection(collectionName).DeleteMany(context.Background(), bson.M{})
 	if err != nil {
@@ -77,7 +75,7 @@ func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
 }
 
 func SetupDatabase(MongoUri, dataName string) *MongoDBClient {
-	client, err := NewMongoDBClient(MongoUri, dataName)
+	client, err := DBClient(MongoUri, dataName)
 	if err != nil {
 		log.Fatalf("Failed to connect to MongoDB: %v", err)
 	}

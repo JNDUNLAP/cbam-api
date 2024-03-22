@@ -14,6 +14,7 @@ func QuarterlyReportGroup(router *Router, client *data.MongoDBClient) {
 func DeclarantGroup(router *Router, client *data.MongoDBClient) {
 	router.Handle("Declarant", "GET", "/reports/{id}/declarent", GetGoodsEmissions(client))
 }
+
 func ImporterGroup(router *Router, client *data.MongoDBClient) {
 	router.Handle("Importer", "GET", "/reports/{id}/importer", GetImporter(client))
 }

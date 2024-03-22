@@ -15,16 +15,11 @@ func (d *SimpleDate) UnmarshalXML(decoder *xml.Decoder, start xml.StartElement) 
 	if err := decoder.DecodeElement(&dateStr, &start); err != nil {
 		return err
 	}
-
-	// Trim whitespace and check the format
 	dateStr = strings.TrimSpace(dateStr)
-
-	// Define a slice of layouts to attempt parsing with.
-	// Ensure the date-only layout is included and attempted.
 	layouts := []string{
-		time.RFC3339,           // "2006-01-02T15:04:05Z07:00" Full datetime with timezone
-		"2006-01-02T15:04:05Z", // Full datetime in UTC
-		"2006-01-02",           // Date only
+		time.RFC3339,
+		"2006-01-02T15:04:05Z",
+		"2006-01-02",
 	}
 
 	var parseErr error
@@ -37,7 +32,6 @@ func (d *SimpleDate) UnmarshalXML(decoder *xml.Decoder, start xml.StartElement) 
 		parseErr = err
 	}
 
-	// Return the last error if all parse attempts fail.
 	return parseErr
 }
 
