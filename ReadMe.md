@@ -1,8 +1,16 @@
 # CBAM API
 
-Directly plug EU CBAM XML reports into your systems. Turn complex data into clear, actionable endpoints.
+![Successful XML File Upload](https://i.postimg.cc/bYCBSnvp/CBAMAPI.png)](https://postimg.cc/6TZ0DyRm)
 
-## Installation
+
+## Features
+
+- **REST Endpoints**: Convert complex CBAM XML data into REST endpoints.
+- **(BYOD) Bring Your Own Database**: Easy setup allows for direct integration into existing systems.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
 
 [Install Go](https://go.dev/doc/install)
 
@@ -30,14 +38,3 @@ Run the project:
 ```bash
 air
 ```
-
-The API server should now be running locally.
-
-## Future Roadmap
-- docs
-- Implement user auth
-- Add reportId validation
-- Add reportId generation
-- Add report modification support
-- Enhance error handling and logging
-- Improve API documentation and code comments
