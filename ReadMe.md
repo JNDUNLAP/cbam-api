@@ -5,8 +5,8 @@
 - Custom CBAM types validate report structure at the character level.
 
 ## Dependencies
-- #### `"github.com/joho/godotenv"`
-- #### `go.mongodb.org/mongo-driver`
+- ##### `github.com/joho/godotenv`
+- ##### `go.mongodb.org/mongo-driver`
 
 ## Installation
 
