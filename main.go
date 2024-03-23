@@ -40,6 +40,6 @@ func server(client *data.MongoDBClient) {
 func main() {
 	model.DataModelTest()
 	loadEnv()
-	client := data.SetupDatabase(os.Getenv("URI"), os.Getenv("DB_NAME"))
+	client := data.SetupDatabase(os.Getenv("MONGODB_URI"), os.Getenv("DB_NAME"))
 	server(client)
 }

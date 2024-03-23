@@ -102,7 +102,7 @@ type OriginCountryType struct {
 
 type ImportedQuantityType struct {
 	SequenceNumber           int
-	Procedure                ProcedureType
+	Procedure                *ProcedureType
 	ImportArea               ImportAreaType
 	MeasureProcedureImported MeasureProcedureType
 	SpecialReferences        *SpecialReferencesType
