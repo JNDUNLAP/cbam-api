@@ -1,8 +1,8 @@
 # CBAM API
 
-Leverage the EU CBAM data model in MongoDB.
-Turn complex XML Reports into REST endpoints.
-Custom CBAM types validate at the character level.
+- Leverage MongoDB for CBAM data
+- Turn complex XML Reports into REST endpoints.
+- Custom CBAM types validate report structure at the character level.
 
 ## Installation
 
