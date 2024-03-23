@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1"
+           targetNamespace="http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1">
+    <xs:include schemaLocation="stypes.xsd"/>
+    <xs:element name="QReport" type="QReportType" />
+    <xs:complexType name="QReportType">
+        <xs:sequence>
+            <xs:element name="SubmissionDate" type="DateTimeContentType"/>
+            <xs:element name="DraftReportId" type="an..22"/>
+            <xs:element name="ReportId" type="an..22" minOccurs="0"/>
+            <xs:element name="ReportingPeriod" type="an2"/>
+            <xs:element name="Year" type="n4"/>
+            <xs:element name="TotalImported" type="n..5"/>
+            <xs:element name="TotalEmissions" type="dec16-5"/>
+            <xs:element name="Declarant" type="DeclarantType"/>
+            <xs:element name="Representative" type="RepresentativeType" minOccurs="0"/>
+            <xs:element name="Importer" type="ImporterType" minOccurs="0"/>
+            <xs:element name="NationalCompetentAuth" type="NationalCompetentAuthType"/>
+            <xs:element name="Signatures" type="SignaturesType"/>
+            <xs:element name="Remarks" type="RemarksType" minOccurs="0"/>
+            <xs:element name="ImportedGood" type="ImportedGoodType" maxOccurs="99999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeclarantType">
+        <xs:sequence>
+            <xs:element name="IdentificationNumber" type="an..17"/>
+            <xs:element name="Name" type="an..70"/>
+            <xs:element name="Role" type="an..5"/>
+            <xs:element name="ActorAddress" type="AddressType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImporterType">
+        <xs:sequence>
+            <xs:element name="IdentificationNumber" type="an..17"/>
+            <xs:element name="Name" type="an..70"/>
+            <xs:element name="ImporterAddress" type="AddressType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RepresentativeType">
+        <xs:sequence>
+            <xs:element name="IdentificationNumber" type="an..17"/>
+            <xs:element name="Name" type="an..70"/>
+            <xs:element name="RepresentativeAddress" type="AddressType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="NationalCompetentAuthType">
+        <xs:sequence>
+            <xs:element name="ReferenceNumber" type="an..128"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SignaturesType">
+        <xs:sequence>
+            <xs:element name="ReportConfirmation" type="ReportConfirmationType"/>
+            <xs:element name="ApplicableMethdologyConfirmation" type="ApplicableMethodologyConfirmationType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ReportConfirmationType">
+        <xs:sequence>
+            <xs:element name="GlobalDataConfirmation" type="xs:boolean"/>
+            <xs:element name="UseOfDataConfirmation" type="xs:boolean"/>
+            <xs:element name="SignatureDate" type="n8"/>
+            <xs:element name="SignaturePlace" type="an..128"/>
+            <xs:element name="Signature" type="an..128"/>
+            <xs:element name ="PositionOfPersonSending" type="an..128"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ApplicableMethodologyConfirmationType">
+        <xs:sequence>
+            <xs:element name="OtherApplicableReportingMethodology" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RemarksType">
+        <xs:sequence>
+            <xs:element name="AdditionalInformation" type="an..512"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImportedGoodType">
+        <xs:sequence>
+            <xs:element name="ItemNumber" type="n..5"/>
+            <xs:element name="Representative" type="RepresentativeType" minOccurs="0"/>
+            <xs:element name="Importer" type="ImporterType" minOccurs="0"/>
+            <xs:element name="CommodityCode" type="CommodityCodeType" minOccurs="0"/>
+            <xs:element name="OriginCountry" type="OriginCountryType"/>
+            <xs:element name="ImportedQuantity" type="ImportedQuantityType" minOccurs="1" maxOccurs="9"/>
+            <xs:element name="MeasureImported" type="MeasureType"/>
+            <xs:element name="TotalEmissions" type="TotalEmissionsType"/>
+            <xs:element name="SupportingDocuments" type="SupportingDocumentsType" minOccurs="0" maxOccurs="99"/>
+            <xs:element name="Remarks" type="RemarksType" minOccurs="0"/>
+            <xs:element name="GoodsEmissions" type="GoodsEmissionsType" minOccurs="1" maxOccurs="999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CommodityCodeType">
+        <xs:sequence>
+            <xs:element name="HsCode" type="an6"/>
+            <xs:element name="CnCode" type="an2"/>
+            <xs:element name="CommodityDetails" type="CommodityDetailsType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CommodityDetailsType">
+        <xs:sequence>
+            <xs:element name="Description" type="an..512"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OriginCountryType">
+        <xs:sequence>
+            <xs:element name="Country" type="a2"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImportedQuantityType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="Procedure" type="ProcedureType"/>
+            <xs:element name="ImportArea" type="ImportAreaType"/>
+            <xs:element name="MeasureProcedureImported" type="MeasureProcedureType" maxOccurs="2"/>
+            <xs:element name="SpecialReferences" type="SpecialReferencesType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProcedureType">
+        <xs:sequence>
+            <xs:element name="RequestedProc" type="an2"/>
+            <xs:element name="PreviousProc" type="an2" minOccurs="0"/>
+            <xs:element name="InwardProcessingInfo" type="InwardProcessingInfoType" minOccurs="0" maxOccurs="999"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InwardProcessingInfoType">
+        <xs:sequence>
+            <xs:element name="MemberStateAuth" type="a2"/>
+            <xs:element name="DischargeBillWaiver" type="n1"/>
+            <xs:element name="Authorisation" type="an..512" />
+            <xs:element name="StartTime" type="n8"/>
+            <xs:element name="EndTime" type="n8"/>
+            <xs:element name="Deadline" type="n8"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImportAreaType">
+        <xs:sequence>
+            <xs:element name="ImportArea" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MeasureType">
+        <xs:sequence>
+            <xs:element name="NetMass" type="dec16-6" minOccurs="0"/>
+            <xs:element name="SupplementaryUnits" type="dec16-6" minOccurs="0"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MeasureProcedureType">
+        <xs:sequence>
+            <xs:element name="Indicator" type="n1"/>
+            <xs:element name="NetMass" type="dec16-6" minOccurs="0"/>
+            <xs:element name="SupplementaryUnits" type="dec16-6" minOccurs="0"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SpecialReferencesType">
+        <xs:sequence>
+            <xs:element name="AdditionalInformation" type="an..512"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TotalEmissionsType">
+        <xs:sequence>
+            <xs:element name="EmissionsPerUnit" type="xs:decimal"/>
+            <xs:element name="OverallEmissions" type="xs:decimal"/>
+            <xs:element name="TotalDirect" type="xs:decimal"/>
+            <xs:element name="TotalIndirect" type="xs:decimal"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SupportingDocumentsType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="Type" type="an4"/>
+            <xs:element name="Country" type="a2" minOccurs="0"/>
+            <xs:element name="ReferenceNumber" type="an..70"/>
+            <xs:element name="LineItemNumber" type="n..5" minOccurs="0"/>
+            <xs:element name="IssuingAuthName" type="an..70" minOccurs="0"/>
+            <xs:element name="ValidityStartDate" type="DateContentType" minOccurs="0"/>
+            <xs:element name="ValidityEndDate" type="DateContentType" minOccurs="0"/>
+            <xs:element name="Description" type="an..256" minOccurs="0"/>
+            <xs:element name="Attachment" type="AttachmentType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AttachmentType">
+        <xs:sequence>
+            <xs:element name="Filename" type="an..256"/>
+            <xs:element name="URI" type="an..2048" minOccurs="0"/>
+            <xs:element name="MIME" type="an..70"/>
+            <xs:element name="Binary" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QualifyingParametersType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="DeterminationType" type="an..5"/>
+            <xs:element name="ParameterId" type="an..5"/>
+            <xs:element name="ParameterName" type="an..256"/>
+            <xs:element name="Description" type="an..256" minOccurs="0"/>
+            <xs:element name="ParameterValueType" type="an..256"/>
+            <xs:element name="ParameterValue" type="an..256"/>
+            <xs:element name="AdditionalInformation" type="an..512" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GoodsEmissionsType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="ProductionCountry" type="a2" minOccurs="0"/>
+            <xs:element name="InstallationOperator" type="InstallationOperatorType" minOccurs="0"/>
+            <xs:element name="Installation" type="InstallationType" minOccurs="0"/>
+            <xs:element name="ProducedMeasure" type="MeasureType"/>
+            <xs:element name="InstallationEmissions" type="InstallationEmissionsType"/>
+            <xs:element name="DirectEmissions" type="DirectEmissionsType"/>
+            <xs:element name="IndirectEmissions" type="IndirectEmissionsType" minOccurs="0"/>
+            <xs:element name="ProdMethodQualifyingParams" type="ProdMethodQualifyingParamsType" maxOccurs="99"/>
+            <xs:element name="SupportingDocuments" type="SupportingDocumentsType" minOccurs="0" maxOccurs="99"/>
+            <xs:element name="CarbonPriceDue" type="CarbonPriceDueType" minOccurs="0" maxOccurs="99"/>
+            <xs:element name="RemarksEmissions" type="RemarksEmissionsType" minOccurs="0" maxOccurs="9"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InstallationType">
+        <xs:sequence>
+            <xs:element name="InstallationId" type="an..17"/>
+            <xs:element name="InstallationName" type="an..256"/>
+            <xs:element name="EconomicActivity" type="an..256" minOccurs="0"/>
+            <xs:element name="Address" type="InstallationAddressType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InstallationAddressType">
+        <xs:sequence>
+            <xs:element name="EstablishmentCountry" type="a2"/>
+            <xs:element name="SubDivision" type="an..35" minOccurs="0"/>
+            <xs:element name="City" type="an..35" minOccurs="0"/>
+            <xs:element name="Street" type="an..70" minOccurs="0"/>
+            <xs:element name="StreetAdditionalLine" type="an..70" minOccurs="0"/>
+            <xs:element name="Number" type="an..35" minOccurs="0"/>
+            <xs:element name="Postcode" type="an..17" minOccurs="0"/>
+            <xs:element name="POBox" type="an..70" minOccurs="0"/>
+            <xs:element name="PlotParcelNumber" type="an..15" minOccurs="0"/>
+            <xs:element name="UNLOCODE" type="an..17" minOccurs="0"/>
+            <xs:element name="Latitude" type="an..17" minOccurs="0"/>
+            <xs:element name="Longitude" type="an..17" minOccurs="0"/>
+            <xs:element name="CoordinatesType" type="an..5" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InstallationOperatorType">
+        <xs:sequence>
+            <xs:element name="OperatorId" type="an..17"/>
+            <xs:element name="OperatorName" type="an..70"/>
+            <xs:element name="OperatorAddress" type="AddressType"/>
+            <xs:element name="ContactDetails" type="ContactDetailsType" maxOccurs="9"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="Country" type="a2"/>
+            <xs:element name="SubDivision" type="an..35" minOccurs="0"/>
+            <xs:element name="City" type="an..35"/>
+            <xs:element name="Street" type="an..70" minOccurs="0"/>
+            <xs:element name="StreetAdditionalLine" type="an..70" minOccurs="0"/>
+            <xs:element name="Number" type="an..35" minOccurs="0"/>
+            <xs:element name="Postcode" type="an..17" minOccurs="0"/>
+            <xs:element name="POBox" type="an..70" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ContactDetailsType">
+        <xs:sequence>
+            <xs:element name="Name" type="an..70"/>
+            <xs:element name="Phone" type="an..35"/>
+            <xs:element name="Email" type="an..256"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProdMethodQualifyingParamsType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="MethodId" type="an..5"/>
+            <xs:element name="MethodName" type="an..256"/>
+            <xs:element name="SteelMillNumber" type="an..256" minOccurs="0"/>
+            <xs:element name="AdditionalInformation" type="an..512" minOccurs="0"/>
+            <xs:element name="DirectQualifyingParameters" type="QualifyingParametersType" minOccurs="0" maxOccurs="99"/>
+            <xs:element name="IndirectQualifyingParameters" type="QualifyingParametersType" minOccurs="0" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProducedGoodsMeasureType">
+        <xs:sequence>
+            <xs:element name="NetMass" type="dec16-6" minOccurs="0"/>
+            <xs:element name="SupplementaryUnits" type="dec16-6" minOccurs="0"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InstallationEmissionsType">
+        <xs:sequence>
+            <xs:element name="OverallEmissions" type="xs:decimal"/>
+            <xs:element name="TotalDirect" type="xs:decimal"/>
+            <xs:element name="TotalIndirect" type="xs:decimal"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DirectEmissionsType">
+        <xs:sequence>
+            <xs:element name="DeterminationType" type="an..5" minOccurs="0"/>
+            <xs:element name="DeterminationTypeElectricity" type="an..5" minOccurs="0"/>
+            <xs:element name="ApplicableReportingTypeMethodology" type="an..5"/>
+            <xs:element name="ApplicableReportingMethodology" type="an..256" minOccurs="0"/>
+            <xs:element name="SpecificEmbeddedEmissions" type="dec16-5" minOccurs="0"/>
+            <xs:element name="OtherSourceIndication" type="an..256" minOccurs="0"/>
+            <xs:element name="EmissionFactorSourceElectricity" type="an..5" minOccurs="0"/>
+            <xs:element name="EmissionFactor" type="dec16-5" minOccurs="0"/>
+            <xs:element name="ElectricityImported" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="TotalEmbeddedElectricityImported" type="dec16-5" minOccurs="0"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+            <xs:element name="EmissionFactorSourceValue" type="an..512" minOccurs="0"/>
+            <xs:element name="Justification" type="an..512" minOccurs="0"/>
+            <xs:element name="ConditionalityFulfillment" type="an..512" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="IndirectEmissionsType">
+        <xs:sequence>
+            <xs:element name="DeterminationType" type="an..5"/>
+            <xs:element name="EmissionFactorSource" type="an..5" minOccurs="0"/>
+            <xs:element name="EmissionFactor" type="dec16-5" minOccurs="0"/>
+            <xs:element name="SpecificEmbeddedEmissions" type="xs:decimal"/>
+            <xs:element name="MeasurementUnit" type="an..5"/>
+            <xs:element name="ElectricityConsumed" type="dec5-2" minOccurs="0"/>
+            <xs:element name="ElectricitySource" type="an..5"/>
+            <xs:element name="OtherSourceIndication" type="an..256" minOccurs="0"/>
+            <xs:element name="EmissionFactorSourceValue" type="an..512" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CarbonPriceDueType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="InstrumentType" type="an..5"/>
+            <xs:element name="LegalActDescription" type="an..512"/>
+            <xs:element name="Amount" type="xs:decimal"/>
+            <xs:element name="Currency" type="a3"/>
+            <xs:element name="ExchangeRate" type="an..2"/>
+            <xs:element name="EURO" type="xs:decimal"/>
+            <xs:element name="Country" type="a2"/>
+            <xs:element name="ProductsCovered" type="ProductsCoveredType" minOccurs="0" maxOccurs="9"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProductsCoveredType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="Type" type="an..5"/>
+            <xs:element name="CN" type="an..8" minOccurs="0"/>
+            <xs:element name="QuantityCovered" type="dec16-5"/>
+            <xs:element name="QuantityCoveredFreeAloc" type="dec16-5"/>
+            <xs:element name="SupplementaryInformation" type="an..256" minOccurs="0"/>
+            <xs:element name="AdditionalInformation" type="an..512" minOccurs="0"/>
+            <xs:element name="Measure" type="MeasureType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RemarksEmissionsType">
+        <xs:sequence>
+            <xs:element name="SequenceNumber" type="n..5"/>
+            <xs:element name="AdditionalInformation" type="an..512"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

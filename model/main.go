@@ -1,323 +1,309 @@
 package model
 
-import (
-	"encoding/xml"
-
-	"github.com/shopspring/decimal"
-)
-
-// swagger:model QReport
 type QReport struct {
-	// XMLName               xml.Name              `xml:"QReport"`
-	SubmissionDate        SimpleDate            `xml:"SubmissionDate"`
-	ReportId              string                `xml:"ReportId"`
-	ReportingPeriod       string                `xml:"ReportingPeriod"`
-	Year                  string                `xml:"Year"`
-	Declarant             Declarant             `xml:"Declarant"`
-	Importer              Importer              `xml:"Importer"`
-	NationalCompetentAuth NationalCompetentAuth `xml:"NationalCompetentAuth"`
-	Signatures            Signatures            `xml:"Signatures"`
-	ImportedGoods         ImportedGoods         `xml:"ImportedGood"`
+	// XMLName               xml.Name `xml:"QReport"`
+	SubmissionDate DateTime
+	DraftReportId  STRING22
+	// ReportId              STRING22
+	ReportingPeriod       STRING2
+	Year                  NUMERIC4
+	TotalImported         int
+	TotalEmissions        DECIMAL165
+	Declarant             DeclarantType
+	Representative        *RepresentativeType
+	Importer              *ImporterType
+	NationalCompetentAuth NationalCompetentAuthType
+	Signatures            SignaturesType
+	Remarks               *RemarksType
+	ImportedGood          ImportedGood
 }
 
-// swagger:model Declarant
-type Declarant struct {
-	IdentificationNumber string  `xml:"IdentificationNumber"`
-	Name                 string  `xml:"Name"`
-	Role                 string  `xml:"Role"`
-	ActorAddress         Address `xml:"ActorAddress"`
+type DeclarantType struct {
+	IdentificationNumber STRING17
+	Name                 STRING70
+	Role                 STRING5
+	ActorAddress         AddressType
 }
 
-// swagger:model Importer
-type Importer struct {
-	IdentificationNumber string  `xml:"IdentificationNumber"`
-	Name                 string  `xml:"Name"`
-	ImporterAddress      Address `xml:"ImporterAddress"`
+type ImporterType struct {
+	IdentificationNumber STRING17
+	Name                 STRING70
+	ImporterAddress      AddressType
 }
 
-// swagger:model Address
-type Address struct {
-	Country              string          `xml:"Country"`
-	SubDivision          string          `xml:"SubDivision"`
-	City                 string          `xml:"City"`
-	Street               string          `xml:"Street"`
-	StreetAdditionalLine string          `xml:"StreetAdditionalLine"`
-	Number               decimal.Decimal `xml:"Number"`
-	Postcode             string          `xml:"Postcode"`
-	POBox                string          `xml:"POBox"`
+type RepresentativeType struct {
+	IdentificationNumber  STRING17
+	Name                  STRING70
+	RepresentativeAddress AddressType
+}
+type AddressType struct {
+	Country              STRING2
+	SubDivision          *STRING35 // Optional field
+	City                 STRING35
+	Street               *STRING70 // Optional field
+	StreetAdditionalLine *STRING70 // Optional field
+	Number               *STRING35 // Optional field
+	Postcode             *STRING17 // Optional field
+	POBox                *STRING70 // Optional field
 }
 
-// swagger:model NationalCompetentAuth
-type NationalCompetentAuth struct {
-	ReferenceNumber string `xml:"ReferenceNumber"`
+type NationalCompetentAuthType struct {
+	ReferenceNumber STRING128
 }
 
-// swagger:model Signatures
-type Signatures struct {
-	ReportConfirmation               ReportConfirmation                `xml:"ReportConfirmation"`
-	ApplicableMethdologyConfirmation ApplicableMethodologyConfirmation `xml:"ApplicableMethdologyConfirmation"`
+type SignaturesType struct {
+	ReportConfirmation                ReportConfirmationType
+	ApplicableMethodologyConfirmation *ApplicableMethodologyConfirmationType
 }
 
-// swagger:model ReportConfirmation
-type ReportConfirmation struct {
-	GlobalDataConfirmation  bool   `xml:"GlobalDataConfirmation"`
-	UseOfDataConfirmation   bool   `xml:"UseOfDataConfirmation"`
-	SignatureDate           string `xml:"SignatureDate"`
-	SignaturePlace          string `xml:"SignaturePlace"`
-	Signature               string `xml:"Signature"`
-	PositionOfPersonSending string `xml:"PositionOfPersonSending"`
+type ReportConfirmationType struct {
+	GlobalDataConfirmation  XSBoolean
+	UseOfDataConfirmation   XSBoolean
+	SignatureDate           NUMERIC8
+	SignaturePlace          STRING128
+	Signature               STRING128
+	PositionOfPersonSending STRING128
 }
 
-// swagger:model ApplicableMethodologyConfirmation
-type ApplicableMethodologyConfirmation struct {
-	OtherApplicableReportingMethodology bool `xml:"OtherApplicableReportingMethodology"`
+type ApplicableMethodologyConfirmationType struct {
+	OtherApplicableReportingMethodology XSBoolean
 }
 
-// swagger:model ImportedGoods
-type ImportedGoods struct {
-	ItemNumber          string             `xml:"ItemNumber"`
-	CommodityCode       CommodityCode      `xml:"CommodityCode"`
-	OriginCountry       OriginCountry      `xml:"OriginCountry"`
-	ImportedQuantity    ImportedQuantity   `xml:"ImportedQuantity"`
-	MeasureImported     MeasureImported    `xml:"MeasureImported"`
-	TotalEmissions      TotalEmissions     `xml:"TotalEmissions"`
-	SupportingDocuments SupportingDocument `xml:"SupportingDocuments"`
-	Remarks             Remarks            `xml:"Remarks"`
-	GoodsEmissions      []GoodsEmission    `xml:"GoodsEmissions"`
+type RemarksType struct {
+	AdditionalInformation STRING128
 }
 
-// swagger:model CommodityCode
-type CommodityCode struct {
-	HsCode           string           `xml:"HsCode"`
-	CnCode           string           `xml:"CnCode"`
-	CommodityDetails CommodityDetails `xml:"CommodityDetails"`
+type ImportedGood struct {
+	ItemNumber          int
+	Representative      *RepresentativeType
+	Importer            *ImporterType
+	CommodityCode       *CommodityCodeType
+	OriginCountry       OriginCountryType
+	ImportedQuantity    ImportedQuantityType
+	MeasureImported     MeasureType
+	TotalEmissions      TotalEmissionsType
+	SupportingDocuments SupportingDocument
+	Remarks             *RemarksType
+	GoodsEmissions      GoodsEmissionsType
+}
+type CommodityCodeType struct {
+	HsCode           STRING6
+	CnCode           STRING2
+	CommodityDetails CommodityDetailsType
 }
 
-// swagger:model CommodityDetails
-type CommodityDetails struct {
-	Description string `xml:"Description"`
+type CommodityDetailsType struct {
+	Description STRING512 // Assuming aRANGE512 should map to a large enough predefined type
 }
 
-// swagger:model OriginCountry
-type OriginCountry struct {
-	Country string `xml:"Country"`
+type OriginCountryType struct {
+	Country STRING2
 }
 
-// swagger:model ImportedQuantity
-type ImportedQuantity struct {
-	SequenceNumber           decimal.Decimal          `xml:"SequenceNumber"`
-	Procedure                Procedure                `xml:"Procedure"`
-	ImportArea               ImportArea               `xml:"ImportArea"`
-	MeasureProcedureImported MeasureProcedureImported `xml:"MeasureProcedureImported"`
-	SpecialReferences        SpecialReferences        `xml:"SpecialReferences"`
+type ImportedQuantityType struct {
+	SequenceNumber           int
+	Procedure                ProcedureType
+	ImportArea               ImportAreaType
+	MeasureProcedureImported MeasureProcedureType
+	SpecialReferences        *SpecialReferencesType
 }
 
-// swagger:model Procedure
-type Procedure struct {
-	RequestedProc string `xml:"RequestedProc"`
-	PreviousProc  string `xml:"PreviousProc"`
+type ProcedureType struct {
+	RequestedProc        STRING2
+	PreviousProc         *STRING2
+	InwardProcessingInfo InwardProcessingInfoType
 }
 
-// swagger:model ImportArea
-type ImportArea struct {
-	ImportArea string `xml:"ImportArea"`
+type InwardProcessingInfoType struct {
+	MemberStateAuth     STRING2
+	DischargeBillWaiver NUMERIC1
+	Authorisation       STRING128
+	StartTime           NUMERIC8
+	EndTime             NUMERIC8
+	Deadline            NUMERIC8
 }
 
-// swagger:model MeasureProcedureImported
-type MeasureProcedureImported struct {
-	Indicator       string `xml:"Indicator"`
-	NetMass         string `xml:"NetMass"`
-	MeasurementUnit string `xml:"MeasurementUnit"`
+type ImportAreaType struct {
+	ImportArea STRING5
 }
 
-// swagger:model SpecialReferences
-type SpecialReferences struct {
-	AdditionalInformation string `xml:"AdditionalInformation"`
+type MeasureType struct {
+	NetMass            *DECIMAL166
+	SupplementaryUnits *DECIMAL166
+	MeasurementUnit    STRING5
 }
 
-// swagger:model MeasureImported
-type MeasureImported struct {
-	NetMass         string `xml:"NetMass"`
-	MeasurementUnit string `xml:"MeasurementUnit"`
+type MeasureProcedureType struct {
+	Indicator          NUMERIC1
+	NetMass            *DECIMAL166
+	SupplementaryUnits *DECIMAL166
+	MeasurementUnit    STRING5
 }
 
-// swagger:model TotalEmissions
-type TotalEmissions struct {
-	EmissionsPerUnit string `xml:"EmissionsPerUnit"`
-	OverallEmissions string `xml:"OverallEmissions"`
-	TotalDirect      string `xml:"TotalDirect"`
-	TotalIndirect    string `xml:"TotalIndirect"`
-	MeasurementUnit  string `xml:"MeasurementUnit"`
+type SpecialReferencesType struct {
+	AdditionalInformation STRING128 // Assuming aRANGE512 maps to a large enough predefined type
 }
 
-// swagger:model SupportingDocument
+type TotalEmissionsType struct {
+	EmissionsPerUnit XSDecimal
+	OverallEmissions XSDecimal
+	TotalDirect      XSDecimal
+	TotalIndirect    XSDecimal
+	MeasurementUnit  STRING5
+}
+
 type SupportingDocument struct {
-	SequenceNumber    decimal.Decimal `xml:"SequenceNumber"`
-	Type              string          `xml:"Type"`
-	Country           string          `xml:"Country"`
-	ReferenceNumber   string          `xml:"ReferenceNumber"`
-	LineItemNumber    string          `xml:"LineItemNumber"`
-	IssuingAuthName   string          `xml:"IssuingAuthName"`
-	ValidityStartDate SimpleDate      `xml:"ValidityStartDate"`
-	ValidityEndDate   SimpleDate      `xml:"ValidityEndDate"`
-	Description       string          `xml:"Description"`
-	Attachment        Attachment      `xml:"Attachment"`
+	SequenceNumber    int
+	Type              STRING8
+	Country           *STRING2
+	ReferenceNumber   STRING70
+	LineItemNumber    *NUMERIC5
+	IssuingAuthName   *STRING70
+	ValidityStartDate *DateTime
+	ValidityEndDate   *DateTime
+	Description       *STRING128
+	Attachment        *AttachmentType
 }
 
-// swagger:model Attachment
-type Attachment struct {
-	Filename string `xml:"Filename"`
-	MIME     string `xml:"MIME"`
+type AttachmentType struct {
+	Filename STRING128
+	URI      *STRING128
+	MIME     STRING70
+	Binary   byte // base64Binary maps to byte in Go
 }
 
-// swagger:model Remarks
-type Remarks struct {
-	AdditionalInformation string `xml:"AdditionalInformation"`
+type GoodsEmissionsType struct {
+	SequenceNumber             int
+	ProductionCountry          *STRING2
+	InstallationOperator       *InstallationOperatorType
+	Installation               *InstallationType
+	ProducedMeasure            MeasureType
+	InstallationEmissions      InstallationEmissionsType
+	DirectEmissions            DirectEmissionsType
+	IndirectEmissions          *IndirectEmissionsType
+	ProdMethodQualifyingParams ProdMethodQualifyingParamsType
+	SupportingDocuments        SupportingDocument
+	CarbonPriceDue             CarbonPriceDueType
+	RemarksEmissions           RemarksEmissionsType
 }
 
-// swagger:model GoodsEmission
-type GoodsEmission struct {
-	SequenceNumber             decimal.Decimal              `xml:"SequenceNumber"`
-	ProductionCountry          string                       `xml:"ProductionCountry"`
-	InstallationOperator       InstallationOperator         `xml:"InstallationOperator"`
-	Installation               Installation                 `xml:"Installation"`
-	ProducedMeasure            ProducedMeasure              `xml:"ProducedMeasure"`
-	InstallationEmissions      InstallationEmissions        `xml:"InstallationEmissions"`
-	DirectEmissions            DirectEmissions              `xml:"DirectEmissions"`
-	IndirectEmissions          IndirectEmissions            `xml:"IndirectEmissions"`
-	ProdMethodQualifyingParams []ProdMethodQualifyingParams `xml:"ProdMethodQualifyingParams"`
-	SupportingDocuments        SupportingDocument           `xml:"SupportingDocuments"`
-	RemarksEmissions           RemarksEmissions             `xml:"RemarksEmissions"`
-	CarbonPriceDue             CarbonPriceDue               `xml:"CarbonPriceDue"`
+type InstallationOperatorType struct {
+	OperatorId      STRING17
+	OperatorName    STRING70
+	OperatorAddress AddressType
+	ContactDetails  ContactDetailsType
 }
 
-// swagger:model InstallationOperator
-type InstallationOperator struct {
-	OperatorId      string         `xml:"OperatorId"`
-	OperatorName    string         `xml:"OperatorName"`
-	OperatorAddress Address        `xml:"OperatorAddress"`
-	ContactDetails  ContactDetails `xml:"ContactDetails"`
+type InstallationType struct {
+	InstallationId   STRING17
+	InstallationName STRING128
+	EconomicActivity *STRING128
+	Address          InstallationAddressType
 }
 
-// swagger:model ContactDetails
-type ContactDetails struct {
-	Name  string `xml:"Name"`
-	Phone string `xml:"Phone"`
-	Email string `xml:"Email"`
+type InstallationAddressType struct {
+	EstablishmentCountry STRING2
+	SubDivision          *STRING35
+	City                 *STRING35
+	Street               *STRING70
+	StreetAdditionalLine *STRING70
+	Number               *STRING35
+	Postcode             *STRING17
+	POBox                *STRING70
+	PlotParcelNumber     *STRING15
+	UNLOCODE             *STRING17
+	Latitude             *STRING17
+	Longitude            *STRING17
+	CoordinatesType      *STRING5
 }
 
-// swagger:model Installation
-type Installation struct {
-	InstallationId   string              `xml:"InstallationId"`
-	InstallationName string              `xml:"InstallationName"`
-	Address          InstallationAddress `xml:"Address"`
+type ContactDetailsType struct {
+	Name  STRING70
+	Phone STRING35
+	Email STRING256
 }
 
-// swagger:model InstallationAddress
-type InstallationAddress struct {
-	EstablishmentCountry string          `xml:"EstablishmentCountry"`
-	SubDivision          string          `xml:"SubDivision"`
-	City                 string          `xml:"City"`
-	Street               string          `xml:"Street"`
-	StreetAdditionalLine string          `xml:"StreetAdditionalLine"`
-	Number               decimal.Decimal `xml:"Number"`
-	Postcode             string          `xml:"Postcode"`
-	POBox                string          `xml:"POBox"`
-	PlotParcelNumber     string          `xml:"PlotParcelNumber"`
-	Latitude             decimal.Decimal `xml:"Latitude"`
-	Longitude            decimal.Decimal `xml:"Longitude"`
-	CoordinatesType      string          `xml:"CoordinatesType"`
+type ProdMethodQualifyingParamsType struct {
+	SequenceNumber               int
+	MethodId                     STRING5
+	MethodName                   STRING256
+	SteelMillNumber              *STRING256
+	AdditionalInformation        *STRING512
+	DirectQualifyingParameters   QualifyingParametersType
+	IndirectQualifyingParameters QualifyingParametersType
 }
 
-// swagger:model ProducedMeasure
-type ProducedMeasure struct {
-	NetMass         string `xml:"NetMass"`
-	MeasurementUnit string `xml:"MeasurementUnit"`
+type QualifyingParametersType struct {
+	SequenceNumber        int
+	DeterminationType     STRING5
+	ParameterId           STRING5
+	ParameterName         STRING256
+	Description           *STRING256
+	ParameterValueType    STRING256
+	ParameterValue        STRING256
+	AdditionalInformation *STRING512
 }
 
-// swagger:model InstallationEmissions
-type InstallationEmissions struct {
-	OverallEmissions string `xml:"OverallEmissions"`
-	TotalDirect      string `xml:"TotalDirect"`
-	TotalIndirect    string `xml:"TotalIndirect"`
-	MeasurementUnit  string `xml:"MeasurementUnit"`
+type InstallationEmissionsType struct {
+	OverallEmissions XSDecimal
+	TotalDirect      XSDecimal
+	TotalIndirect    XSDecimal
+	MeasurementUnit  STRING5
 }
 
-// swagger:model DirectEmissions
-type DirectEmissions struct {
-	DeterminationType                  string `xml:"DeterminationType"`
-	ApplicableReportingTypeMethodology string `xml:"ApplicableReportingTypeMethodology"`
-	ApplicableReportingMethodology     string `xml:"ApplicableReportingMethodology"`
-	SpecificEmbeddedEmissions          string `xml:"SpecificEmbeddedEmissions"`
-	MeasurementUnit                    string `xml:"MeasurementUnit"`
+type DirectEmissionsType struct {
+	DeterminationType                  *STRING5
+	DeterminationTypeElectricity       *STRING5
+	ApplicableReportingTypeMethodology STRING5
+	ApplicableReportingMethodology     *STRING256
+	SpecificEmbeddedEmissions          *DECIMAL165
+	OtherSourceIndication              *STRING256
+	EmissionFactorSourceElectricity    *STRING5
+	EmissionFactor                     *DECIMAL165
+	ElectricityImported                *XSDecimal
+	TotalEmbeddedElectricityImported   *DECIMAL165
+	MeasurementUnit                    STRING5
+	EmissionFactorSourceValue          *STRING512
+	Justification                      *STRING512
+	ConditionalityFulfillment          *STRING512
 }
 
-// swagger:model IndirectEmissions
-type IndirectEmissions struct {
-	DeterminationType         string `xml:"DeterminationType"`
-	SpecificEmbeddedEmissions string `xml:"SpecificEmbeddedEmissions"`
-	MeasurementUnit           string `xml:"MeasurementUnit"`
-	ElectricitySource         string `xml:"ElectricitySource"`
-	OtherSourceIndication     string `xml:"OtherSourceIndication"`
+type IndirectEmissionsType struct {
+	DeterminationType         STRING5
+	EmissionFactorSource      *STRING5
+	EmissionFactor            *DECIMAL165
+	SpecificEmbeddedEmissions XSDecimal
+	MeasurementUnit           STRING5
+	ElectricityConsumed       *DECIMAL52
+	ElectricitySource         STRING5
+	OtherSourceIndication     *STRING256
+	EmissionFactorSourceValue *STRING512
 }
 
-// swagger:model ProdMethodQualifyingParams
-type ProdMethodQualifyingParams struct {
-	SequenceNumber               decimal.Decimal       `xml:"SequenceNumber"`
-	MethodId                     string                `xml:"MethodId"`
-	MethodName                   string                `xml:"MethodName"`
-	SteelMillNumber              string                `xml:"SteelMillNumber"`
-	AdditionalInformation        string                `xml:"AdditionalInformation"`
-	DirectQualifyingParameters   []QualifyingParameter `xml:"DirectQualifyingParameters"`
-	IndirectQualifyingParameters []QualifyingParameter `xml:"IndirectQualifyingParameters"`
+type CarbonPriceDueType struct {
+	SequenceNumber      int
+	InstrumentType      STRING5
+	LegalActDescription STRING512
+	Amount              XSDecimal
+	Currency            STRING3
+	ExchangeRate        STRING3
+	EURO                XSDecimal
+	Country             STRING2
+	ProductsCovered     ProductsCoveredType
 }
 
-// swagger:model QualifyingParameter
-type QualifyingParameter struct {
-	SequenceNumber        decimal.Decimal `xml:"SequenceNumber"`
-	DeterminationType     string          `xml:"DeterminationType"`
-	ParameterId           string          `xml:"ParameterId"`
-	ParameterName         string          `xml:"ParameterName"`
-	Description           string          `xml:"Description"`
-	ParameterValueType    string          `xml:"ParameterValueType"`
-	ParameterValue        string          `xml:"ParameterValue"`
-	AdditionalInformation string          `xml:"AdditionalInformation"`
+type ProductsCoveredType struct {
+	SequenceNumber           int
+	Type                     STRING8
+	CN                       *NUMERIC8
+	QuantityCovered          DECIMAL165
+	QuantityCoveredFreeAloc  DECIMAL165
+	SupplementaryInformation *STRING256
+	AdditionalInformation    *STRING512
+	Measure                  MeasureType
 }
 
-// swagger:model RemarksEmissions
-type RemarksEmissions struct {
-	SequenceNumber        decimal.Decimal `xml:"SequenceNumber"`
-	AdditionalInformation string          `xml:"AdditionalInformation"`
-}
-
-// swagger:model CarbonPriceDue
-type CarbonPriceDue struct {
-	XMLName             xml.Name        `xml:"CarbonPriceDue"`
-	SequenceNumber      decimal.Decimal `xml:"SequenceNumber"`
-	InstrumentType      string          `xml:"InstrumentType"`
-	LegalActDescription string          `xml:"LegalActDescription"`
-	Amount              decimal.Decimal `xml:"Amount"`
-	Currency            string          `xml:"Currency"`
-	ExchangeRate        string          `xml:"ExchangeRate"`
-	EURO                decimal.Decimal `xml:"EURO"`
-	Country             string          `xml:"Country"`
-	ProductsCovered     ProductCovered  `xml:"ProductsCovered"`
-}
-
-// swagger:model ProductCovered
-type ProductCovered struct {
-	SequenceNumber           decimal.Decimal       `xml:"SequenceNumber"`
-	Type                     string                `xml:"Type"`
-	CN                       string                `xml:"CN"`
-	QuantityCovered          decimal.Decimal       `xml:"QuantityCovered"`
-	QuantityCoveredFreeAloc  decimal.Decimal       `xml:"QuantityCoveredFreeAloc"`
-	SupplementaryInformation string                `xml:"SupplementaryInformation"`
-	AdditionalInformation    string                `xml:"AdditionalInformation"`
-	Measure                  ProductCoveredMeasure `xml:"Measure"`
-}
-
-// swagger:model ProductCoveredMeasure
-type ProductCoveredMeasure struct {
-	NetMass         decimal.Decimal `xml:"NetMass"`
-	MeasurementUnit string          `xml:"MeasurementUnit"`
+type RemarksEmissionsType struct {
+	SequenceNumber        int
+	AdditionalInformation STRING512
 }

@@ -10,27 +10,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-// GetImporter retrieves information about the importer for a specific report.
-// swagger:operation GET /reports/{id}/importer importers getImporter
-// ---
-// produces:
-// - application/json
-// parameters:
-// - name: id
-//   in: path
-//   description: The ID of the quarterly report to fetch importer information for
-//   required: true
-//   type: string
-// responses:
-//   "200":
-//     description: Successfully retrieved importer information
-//     schema:
-//       $ref: '#/definitions/Importer'
-//   "400":
-//     description: Bad request, such as missing report ID
-//   "500":
-//     description: Internal server error
-
 func GetImporter(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
 		reportID := params["id"]
@@ -53,7 +32,7 @@ func GetImporter(dbClient *data.MongoDBClient) HandlerFunc {
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
-		if err := json.NewEncoder(w).Encode(report.ImportedGoods); err != nil {
+		if err := json.NewEncoder(w).Encode(report.ImportedGood); err != nil {
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusInternalServerError,
 				Message:     "Internal Server Error",

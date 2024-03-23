@@ -1,0 +1,3407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QReport xmlns="http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1">
+    <SubmissionDate>2023-08-08T08:21:14Z</SubmissionDate>
+    <DraftReportId>123</DraftReportId>
+    <ReportingPeriod>Q1</ReportingPeriod>
+    <Year>2023</Year>
+    <Declarant>
+        <IdentificationNumber>BE111111</IdentificationNumber>
+        <Name>Declarant CBAM</Name>
+        <Role>01</Role>
+        <ActorAddress>
+            <Country>BE</Country>
+            <SubDivision>Declarant Sub-division</SubDivision>
+            <City>Declarant city</City>
+            <Street>Declarant Street</Street>
+            <StreetAdditionalLine>Declarant Street additional line</StreetAdditionalLine>
+            <Number>100</Number>
+            <Postcode>DCL-123</Postcode>
+            <POBox>PO DCL-123</POBox>
+        </ActorAddress>
+    </Declarant>
+    <Importer>
+        <IdentificationNumber>TSTIMP01</IdentificationNumber>
+        <Name>Declarant CBAM</Name>
+        <ImporterAddress>
+            <Country>BE</Country>
+            <SubDivision>Declarant Sub-division</SubDivision>
+            <City>Declarant city</City>
+            <Street>Declarant Street</Street>
+            <StreetAdditionalLine>Declarant Street additional line</StreetAdditionalLine>
+            <Number>100</Number>
+            <Postcode>DCL-123</Postcode>
+            <POBox>PO DCL-123</POBox>
+        </ImporterAddress>
+    </Importer>
+    <NationalCompetentAuth>
+        <ReferenceNumber>BE000017</ReferenceNumber>
+    </NationalCompetentAuth>
+    <Signatures>
+        <ReportConfirmation>
+            <GlobalDataConfirmation>true</GlobalDataConfirmation>
+            <UseOfDataConfirmation>true</UseOfDataConfirmation>
+            <SignatureDate>20230807</SignatureDate>
+            <SignaturePlace>Place of signature</SignaturePlace>
+            <Signature>Signature (Full Name)</Signature>
+            <PositionOfPersonSending>Position of person signing</PositionOfPersonSending>
+        </ReportConfirmation>
+        <ApplicableMethdologyConfirmation>
+            <OtherApplicableReportingMethodology>true</OtherApplicableReportingMethodology>
+        </ApplicableMethdologyConfirmation>
+    </Signatures>
+    <ImportedGood>
+        <ItemNumber>1</ItemNumber>
+        <CommodityCode>
+            <HsCode>760900</HsCode>
+            <CnCode>76090000</CnCode>
+            <CommodityDetails>
+                <Description>Aluminium tube or pipe fittings (for example, couplings, elbows, sleeves)</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 <Attachment>
+		    <Filename>Supporting_document_01.docx</Filename>
+		    <MIME>application/vnd.openxmlformats-officedocument.wordprocessingml.document</MIME>
+		 </Attachment>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+    <ImportedGood>
+        <ItemNumber>2</ItemNumber>
+        <CommodityCode>
+            <HsCode>280410</HsCode>
+            <CnCode>28041000</CnCode>
+            <CommodityDetails>
+                <Description>Hydrogen</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>US</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>48</RequestedProc>
+                <PreviousProc>07</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EUOTH</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <SupplementaryUnits>42000</SupplementaryUnits>
+                <MeasurementUnit>04</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <SupplementaryUnits>42000</SupplementaryUnits>
+            <MeasurementUnit>04</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>825.7</EmissionsPerUnit>
+            <OverallEmissions>34679400</OverallEmissions>
+            <TotalDirect>974400</TotalDirect>
+            <TotalIndirect>33705000</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>C710</Type>
+         <Country>BS</Country>
+         <ReferenceNumber>C710 Reference number</ReferenceNumber>
+         <LineItemNumber>11111</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 <Attachment>
+		<Filename>Supporting_document_03.jpg</Filename>
+		<MIME>image/jpeg</MIME>
+		</Attachment>
+      </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>US</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP07-0003</OperatorId>
+                <OperatorName>Goldfinder, Inc.</OperatorName>
+                <OperatorAddress>
+                    <Country>US</Country>
+                    <SubDivision>USA Subdivision</SubDivision>
+                    <City>Fort Knox</City>
+                    <Street>Fort Knox Street</Street>
+                    <StreetAdditionalLine>Fort Knox Street Additional line</StreetAdditionalLine>
+                    <Number>10</Number>
+                    <Postcode>40107</Postcode>
+                    <POBox>PO BOX 40107</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP07-0003 Contact name</Name>
+                    <Phone>(502) 943-1000</Phone>
+                    <Email>OP07-0003@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN04</InstallationId>
+                <InstallationName>Fort Knox Metal works</InstallationName>
+                <Address>
+                    <EstablishmentCountry>US</EstablishmentCountry>
+                    <SubDivision>USA Sub-division</SubDivision>
+                    <City>Fort Knox</City>
+                    <Street>Fort Knox Street</Street>
+                    <StreetAdditionalLine>Fort Knox Street Additional line</StreetAdditionalLine>
+                    <Number>10</Number>
+                    <Postcode>40107</Postcode>
+                    <POBox>PO BOX 40107</POBox>
+                    <PlotParcelNumber>IN04-40107</PlotParcelNumber>
+                    <Latitude>37.8976552</Latitude>
+                    <Longitude>-85.9038521</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <SupplementaryUnits>42000</SupplementaryUnits>
+                <MeasurementUnit>04</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>34679400</OverallEmissions>
+                <TotalDirect>974400</TotalDirect>
+                <TotalIndirect>33705000</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.2</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>32.1</EmissionFactor>
+                <SpecificEmbeddedEmissions>802.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>25</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P13</MethodId>
+                <MethodName>Partial oxidation</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P12</MethodId>
+                <MethodName>Steam reforming (“grey”)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>3</SequenceNumber>
+                <MethodId>P15</MethodId>
+                <MethodName>Electrolysis (possibly “green”)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>4</SequenceNumber>
+                <MethodId>P14</MethodId>
+                <MethodName>Chlor-Alkali electrolysis</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>5</SequenceNumber>
+                <MethodId>P16</MethodId>
+                <MethodName>Steam reforming with CCS (“blue”)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>02</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>328.5</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>389.27</EURO>
+                <Country>US</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC02</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>10</QuantityCovered>
+                    <QuantityCoveredFreeAloc>10</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <SupplementaryUnits>8</SupplementaryUnits>
+                        <MeasurementUnit>04</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+    <ImportedGood>
+        <ItemNumber>3</ItemNumber>
+        <CommodityCode>
+            <HsCode>720610</HsCode>
+            <CnCode>72061000</CnCode>
+            <CommodityDetails>
+                <Description>Ingots</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>CN</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>01</RequestedProc>
+                <PreviousProc>40</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>100</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>50</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>150</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>55</EmissionsPerUnit>
+            <OverallEmissions>8250</OverallEmissions>
+            <TotalDirect>750</TotalDirect>
+            <TotalIndirect>7500</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>CN</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP05-0002</OperatorId>
+                <OperatorName>CN Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>CM</Country>
+                    <SubDivision>China Subdivision</SubDivision>
+                    <City>Shanghai</City>
+                    <Street>Shanghai Street</Street>
+                    <StreetAdditionalLine>Shanghai Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP05-0002 Contact name</Name>
+                    <Phone>00860211234-5678</Phone>
+                    <Email>OP05-0002@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN06</InstallationId>
+                <InstallationName>Pumaaa Steel Co., Ltd</InstallationName>
+                <Address>
+                    <EstablishmentCountry>CN</EstablishmentCountry>
+                    <SubDivision>China Sub-division</SubDivision>
+                    <City>Wuxi</City>
+                    <Street>Wuxi Street</Street>
+                    <Postcode>213104</Postcode>
+                    <POBox>PO BOX 213104</POBox>
+                    <PlotParcelNumber>IN06-213104</PlotParcelNumber>
+                    <Latitude>31.4934662</Latitude>
+                    <Longitude>120.307684</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>150</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>8250</OverallEmissions>
+                <TotalDirect>750</TotalDirect>
+                <TotalIndirect>7500</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>50</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P04</MethodId>
+                <MethodName>EAF - electric arc furnace (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP10</ParameterId>
+                    <ParameterName>Scrap used</ParameterName>
+                    <Description>Amount of scrap used per amount of crude steel</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>17</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP11</ParameterId>
+                    <ParameterName>Main reducing agent (Coke, Coal, Natural gas, Hydrogen, other)</ParameterName>
+                    <Description>refers to the production of the precursors &quot;Pig Iron&quot; or &quot;DRI&quot;</Description>
+                    <ParameterValueType>TEXT</ParameterValueType>
+                    <ParameterValue>Default text</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>3</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>4</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP12</ParameterId>
+                    <ParameterName>Ni content</ParameterName>
+                    <Description>Nickel content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>12.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>5</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP13</ParameterId>
+                    <ParameterName>Cr content</ParameterName>
+                    <Description>Chromium content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>12.7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP02</ParameterId>
+                    <ParameterName>Content of Alloy</ParameterName>
+                    <Description>Total percentage of elements other than iron and carbon in the final steel</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>2</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P17</MethodId>
+                <MethodName>Blast furnace / Basic oxygen steel making</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP10</ParameterId>
+                    <ParameterName>Scrap used</ParameterName>
+                    <Description>Amount of scrap used per amount of crude steel</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>18.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP11</ParameterId>
+                    <ParameterName>Main reducing agent (Coke /Coal/ natural gas/ Hydrogen/ other)</ParameterName>
+                    <Description>refers to the production of the precursors &quot;Pig Iron&quot; or &quot;DRI&quot;</Description>
+                    <ParameterValueType>TEXT</ParameterValueType>
+                    <ParameterValue>Default text</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>3</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentag - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>12</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>4</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP12</ParameterId>
+                    <ParameterName>Ni content</ParameterName>
+                    <Description>Nickel content expressed as percentag - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>12</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>5</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP13</ParameterId>
+                    <ParameterName>Cr content</ParameterName>
+                    <Description>Chromium content expressed as percentag - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>13</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>03</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>534</Amount>
+                <Currency>CNY</Currency>
+                <ExchangeRate>CNY</ExchangeRate>
+                <EURO>59985.82</EURO>
+                <Country>IN</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>72061000</CN>
+                    <QuantityCovered>8</QuantityCovered>
+                    <QuantityCoveredFreeAloc>8</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>7</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+    <ImportedGood>
+        <ItemNumber>4</ItemNumber>
+        <CommodityCode>
+            <HsCode>280800</HsCode>
+            <CnCode>28080000</CnCode>
+            <CommodityDetails>
+                <Description>Nitric acid; sulphonitric acids</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>CA</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>07</RequestedProc>
+                <PreviousProc>42</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>12000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>12</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>44</EmissionsPerUnit>
+            <OverallEmissions>528</OverallEmissions>
+            <TotalDirect>144</TotalDirect>
+            <TotalIndirect>384</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>CA</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP03-0001</OperatorId>
+                <OperatorName>Carousel Logistics LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>CA</Country>
+                    <SubDivision>Canada Subdivision</SubDivision>
+                    <City>Vancouver</City>
+                    <Street>Vancouver Street</Street>
+                    <StreetAdditionalLine>Vancouver Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP03-0001 Contact name</Name>
+                    <Phone>(250) 555-0199</Phone>
+                    <Email>OP03-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN02</InstallationId>
+                <InstallationName>JMA Steel Factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>CA</EstablishmentCountry>
+                    <SubDivision>Canada Sub-division</SubDivision>
+                    <City>Vancouver</City>
+                    <Street>Vancouver Street</Street>
+                    <StreetAdditionalLine>Vancouver Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                    <PlotParcelNumber>IN02-34025</PlotParcelNumber>
+                    <Latitude>49.2608724</Latitude>
+                    <Longitude>-123.113952</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>12000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>528</OverallEmissions>
+                <TotalDirect>144</TotalDirect>
+                <TotalIndirect>384</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>12</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>32</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P08</MethodId>
+                <MethodName>Nitric acid production</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP04</ParameterId>
+                    <ParameterName>N as ammonium (NH4+)</ParameterName>
+                    <Description>Content of N as ammonium (NH4+)</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>4</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP04</ParameterId>
+                    <ParameterName>N as ammonium (NH4+)</ParameterName>
+                    <Description>Content of N as ammonium (NH4+)</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>4.2</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P09</MethodId>
+                <MethodName>Mixed fertilizer production</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP05</ParameterId>
+                    <ParameterName>N as nitrate (NO3–)</ParameterName>
+                    <Description>Content of N as nitrate (NO3–)</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>5</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP05</ParameterId>
+                    <ParameterName>N as nitrate (NO3–)</ParameterName>
+                    <Description>Content of N as nitrate (NO3–)</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>5.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>04</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>675</Amount>
+                <Currency>GBP</Currency>
+                <ExchangeRate>GBP</ExchangeRate>
+                <EURO>374.92</EURO>
+                <Country>CA</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>28080000</CN>
+                    <QuantityCovered>10</QuantityCovered>
+                    <QuantityCoveredFreeAloc>10</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>7</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+    <ImportedGood>
+        <ItemNumber>5</ItemNumber>
+        <CommodityCode>
+            <HsCode>250700</HsCode>
+            <CnCode>25070000</CnCode>
+            <CommodityDetails>
+                <Description>Other kaolinic clays</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>BS</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>40</RequestedProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>150000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>150</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>14.56</EmissionsPerUnit>
+            <OverallEmissions>2184</OverallEmissions>
+            <TotalDirect>168</TotalDirect>
+            <TotalIndirect>2016</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>BS</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP07-0004</OperatorId>
+                <OperatorName>Thunderball</OperatorName>
+                <OperatorAddress>
+                    <Country>BS</Country>
+                    <SubDivision>Bahamas Subdivision</SubDivision>
+                    <City>Nassau</City>
+                    <Street>Nassau Street</Street>
+                    <StreetAdditionalLine>Nassau Street Additional line</StreetAdditionalLine>
+                    <Number>7</Number>
+                    <Postcode>-</Postcode>
+                    <POBox>PO BOX -</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP07-0004 Contact name</Name>
+                    <Phone>+1-123456 (EXT) 322</Phone>
+                    <Email>OP07-0004@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN05</InstallationId>
+                <InstallationName>Largo Furnaces</InstallationName>
+                <Address>
+                    <EstablishmentCountry>BS</EstablishmentCountry>
+                    <SubDivision>Bahamas Sub-division</SubDivision>
+                    <City>Nassau</City>
+                    <Street>Nassau Street</Street>
+                    <StreetAdditionalLine>Nassau Street Additional line</StreetAdditionalLine>
+                    <Number>7</Number>
+                    <Postcode>-</Postcode>
+                    <POBox>PO BOX -</POBox>
+                    <PlotParcelNumber>IN05--</PlotParcelNumber>
+                    <Latitude>25.0782266</Latitude>
+                    <Longitude>-77.3383438</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>150</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>2184</OverallEmissions>
+                <TotalDirect>168</TotalDirect>
+                <TotalIndirect>2016</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>1.12</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>SEF02</EmissionFactorSource>
+                <EmissionFactor>1.12</EmissionFactor>
+                <SpecificEmbeddedEmissions>13.44</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>12</ElectricityConsumed>
+                <ElectricitySource>SOE02</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P01</MethodId>
+                <MethodName>Other</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+					<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED05</Type>
+            <Country>TR</Country>
+            <ReferenceNumber>TED05 Reference number</ReferenceNumber>
+            <LineItemNumber>1235</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+			<Attachment>
+			<Filename>Supporting_document_06.xlsx</Filename>
+			<MIME>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</MIME>
+		 </Attachment>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+    <ImportedGood>
+        <ItemNumber>6</ItemNumber>
+        <CommodityCode>
+            <HsCode>271600</HsCode>
+            <CnCode>27160000</CnCode>
+            <CommodityDetails>
+                <Description>Electrical energy</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>43</RequestedProc>
+                <PreviousProc>42</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EUOTH</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <SupplementaryUnits>28</SupplementaryUnits>
+                <MeasurementUnit>03</MeasurementUnit>
+            </MeasureProcedureImported>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <SupplementaryUnits>100</SupplementaryUnits>
+                <MeasurementUnit>03</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <SupplementaryUnits>128</SupplementaryUnits>
+            <MeasurementUnit>03</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>1.17187</EmissionsPerUnit>
+            <OverallEmissions>128</OverallEmissions>
+            <TotalDirect>128</TotalDirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <SupplementaryUnits>128</SupplementaryUnits>
+                <MeasurementUnit>03</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>128</OverallEmissions>
+                <TotalDirect>128</TotalDirect>
+				<TotalIndirect>0</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationTypeElectricity>02</DeterminationTypeElectricity>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <EmissionFactorSourceElectricity>01</EmissionFactorSourceElectricity>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+				<EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+				<EmissionFactor>1</EmissionFactor>
+            </DirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P01</MethodId>
+                <MethodName>Other</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </ProdMethodQualifyingParams>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+	    <ImportedGood>
+        <ItemNumber>7</ItemNumber>
+        <CommodityCode>
+            <HsCode>760521</HsCode>
+            <CnCode>76052100</CnCode>
+            <CommodityDetails>
+                <Description>Of aluminium alloys</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+			<Attachment>
+			<Filename>Supporting_document_02.pdf</Filename>
+			<MIME>application/pdf</MIME>
+			</Attachment>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+	    <ImportedGood>
+        <ItemNumber>8</ItemNumber>
+        <CommodityCode>
+            <HsCode>760310</HsCode>
+            <CnCode>76031000</CnCode>
+            <CommodityDetails>
+                <Description>Powders of non-lamellar structure</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood>
+	    <ImportedGood>
+        <ItemNumber>9</ItemNumber>
+        <CommodityCode>
+            <HsCode>761410</HsCode>
+            <CnCode>76141000</CnCode>
+            <CommodityDetails>
+                <Description>With steel core</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood> 
+		    <ImportedGood>
+        <ItemNumber>10</ItemNumber>
+        <CommodityCode>
+            <HsCode>761400</HsCode>
+            <CnCode>76140000</CnCode>
+            <CommodityDetails>
+                <Description>Stranded wire, cables, plaited bands and the like, of aluminium, not electrically insulated</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood> 
+		    <ImportedGood>
+        <ItemNumber>11</ItemNumber>
+        <CommodityCode>
+            <HsCode>761300</HsCode>
+            <CnCode>76130000</CnCode>
+            <CommodityDetails>
+                <Description>Aluminium containers for compressed or liquefied gas</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood> 
+		    <ImportedGood>
+        <ItemNumber>12</ItemNumber>
+        <CommodityCode>
+            <HsCode>761210</HsCode>
+            <CnCode>76121000</CnCode>
+            <CommodityDetails>
+                <Description>Collapsible tubular containers</Description>
+            </CommodityDetails>
+        </CommodityCode>
+        <OriginCountry>
+            <Country>TR</Country>
+        </OriginCountry>
+        <ImportedQuantity>
+            <SequenceNumber>1</SequenceNumber>
+            <Procedure>
+                <RequestedProc>44</RequestedProc>
+                <PreviousProc>48</PreviousProc>
+            </Procedure>
+            <ImportArea>
+                <ImportArea>EU</ImportArea>
+            </ImportArea>
+            <MeasureProcedureImported>
+                <Indicator>0</Indicator>
+                <NetMass>550</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </MeasureProcedureImported>
+            <SpecialReferences>
+                <AdditionalInformation>Special references for goods</AdditionalInformation>
+            </SpecialReferences>
+        </ImportedQuantity>
+        <MeasureImported>
+            <NetMass>550</NetMass>
+            <MeasurementUnit>01</MeasurementUnit>
+        </MeasureImported>
+        <TotalEmissions>
+            <EmissionsPerUnit>24.75454</EmissionsPerUnit>
+            <OverallEmissions>13615</OverallEmissions>
+            <TotalDirect>12908</TotalDirect>
+            <TotalIndirect>707</TotalIndirect>
+            <MeasurementUnit>EMU1</MeasurementUnit>
+        </TotalEmissions>
+		<SupportingDocuments>
+         <SequenceNumber>1</SequenceNumber>
+         <Type>E017</Type>
+         <Country>CA</Country>
+         <ReferenceNumber>E017 Reference number</ReferenceNumber>
+         <LineItemNumber>88888</LineItemNumber>
+         <IssuingAuthName>Issuing authority name</IssuingAuthName>
+         <ValidityStartDate>2024-01-01</ValidityStartDate>
+         <ValidityEndDate>2024-01-01</ValidityEndDate>
+         <Description>Description</Description>
+		 </SupportingDocuments>
+        <Remarks>
+            <AdditionalInformation>Goods' additional information</AdditionalInformation>
+        </Remarks>
+        <GoodsEmissions>
+            <SequenceNumber>1</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN03</InstallationId>
+                <InstallationName>Augusta Steel INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>5</Number>
+                    <Postcode>200042</Postcode>
+                    <POBox>PO BOX 200042</POBox>
+                    <PlotParcelNumber>IN03-200042</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>548</NetMass>
+                <MeasurementUnit>01</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>13426</OverallEmissions>
+                <TotalDirect>12878</TotalDirect>
+				<TotalIndirect>548</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM02</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>23.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>02</DeterminationType>
+                <SpecificEmbeddedEmissions>1</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>7</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>2</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP14</ParameterId>
+                    <ParameterName>Mn content</ParameterName>
+                    <Description>Manganese content expressed as percentage - to be filled only if total alloy content >5%</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>14</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported;</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+			<SupportingDocuments>
+            <SequenceNumber>1</SequenceNumber>
+            <Type>TED02</Type>
+            <Country>CA</Country>
+            <ReferenceNumber>TED02 Reference number</ReferenceNumber>
+            <LineItemNumber>12345</LineItemNumber>
+            <IssuingAuthName>Issuing authority name</IssuingAuthName>
+            <ValidityStartDate>2024-01-01</ValidityStartDate>
+            <ValidityEndDate>2024-01-01</ValidityEndDate>
+            <Description>Description</Description>
+         </SupportingDocuments>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+        <GoodsEmissions>
+            <SequenceNumber>2</SequenceNumber>
+            <ProductionCountry>TR</ProductionCountry>
+            <InstallationOperator>
+                <OperatorId>OP04-0001</OperatorId>
+                <OperatorName>TR Steel Operator LTD</OperatorName>
+                <OperatorAddress>
+                    <Country>TR</Country>
+                    <SubDivision>Turkey Subdivision</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>4</Number>
+                    <Postcode>34025</Postcode>
+                    <POBox>PO BOX 34025</POBox>
+                </OperatorAddress>
+                <ContactDetails>
+                    <Name>OP04-0001 Contact name</Name>
+                    <Phone>901234567</Phone>
+                    <Email>OP04-0001@cbam.com</Email>
+                </ContactDetails>
+            </InstallationOperator>
+            <Installation>
+                <InstallationId>IN01</InstallationId>
+                <InstallationName>Bursa steel factory INC</InstallationName>
+                <Address>
+                    <EstablishmentCountry>TR</EstablishmentCountry>
+                    <SubDivision>Turkey Sub-division</SubDivision>
+                    <City>Istanbul</City>
+                    <Street>Istanbul Street</Street>
+                    <StreetAdditionalLine>Istanbul Street Additional line</StreetAdditionalLine>
+                    <Number>3</Number>
+                    <Postcode>V7P</Postcode>
+                    <POBox>PO BOX V7P</POBox>
+                    <PlotParcelNumber>IN01-V7P</PlotParcelNumber>
+                    <Latitude>41.0091982</Latitude>
+                    <Longitude>28.9662187</Longitude>
+                    <CoordinatesType>01</CoordinatesType>
+                </Address>
+            </Installation>
+            <ProducedMeasure>
+                <NetMass>2000</NetMass>
+                <MeasurementUnit>02</MeasurementUnit>
+            </ProducedMeasure>
+            <InstallationEmissions>
+                <OverallEmissions>189</OverallEmissions>
+                <TotalDirect>30</TotalDirect>
+                <TotalIndirect>159</TotalIndirect>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </InstallationEmissions>
+            <DirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <ApplicableReportingTypeMethodology>TOM01</ApplicableReportingTypeMethodology>
+                <ApplicableReportingMethodology>Applicable reporting methodology</ApplicableReportingMethodology>
+                <SpecificEmbeddedEmissions>15</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+            </DirectEmissions>
+            <IndirectEmissions>
+                <DeterminationType>01</DeterminationType>
+                <EmissionFactorSource>01</EmissionFactorSource>
+                <EmissionFactor>5.3</EmissionFactor>
+                <SpecificEmbeddedEmissions>79.5</SpecificEmbeddedEmissions>
+                <MeasurementUnit>EMU1</MeasurementUnit>
+                <ElectricityConsumed>15</ElectricityConsumed>
+                <ElectricitySource>SOE03</ElectricitySource>
+                <OtherSourceIndication>Other source indication</OtherSourceIndication>
+                <EmissionFactorSourceValue>Source of emissions factor value</EmissionFactorSourceValue>
+            </IndirectEmissions>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>1</SequenceNumber>
+                <MethodId>P11</MethodId>
+                <MethodName>Primary Al (with pre-baked Anodes)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>02</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>8</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <ProdMethodQualifyingParams>
+                <SequenceNumber>2</SequenceNumber>
+                <MethodId>P10</MethodId>
+                <MethodName>Secondary Al (using scrap)</MethodName>
+                <SteelMillNumber>Identification number of the specific steel mill</SteelMillNumber>
+                <AdditionalInformation>Additional information</AdditionalInformation>
+                <DirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>9</ParameterValue>
+                </DirectQualifyingParameters>
+                <IndirectQualifyingParameters>
+                    <SequenceNumber>1</SequenceNumber>
+                    <DeterminationType>01</DeterminationType>
+                    <ParameterId>EQP08</ParameterId>
+                    <ParameterName>Post-consumer scrap (Aluminium)</ParameterName>
+                    <Description>The percentage of post-consumer scrap used for the aluminium product imported</Description>
+                    <ParameterValueType>PERCENTAGE</ParameterValueType>
+                    <ParameterValue>6.3</ParameterValue>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                </IndirectQualifyingParameters>
+            </ProdMethodQualifyingParams>
+            <CarbonPriceDue>
+                <SequenceNumber>1</SequenceNumber>
+                <InstrumentType>01</InstrumentType>
+                <LegalActDescription>Description and indication of legal act</LegalActDescription>
+                <Amount>500</Amount>
+                <Currency>USD</Currency>
+                <ExchangeRate>USD</ExchangeRate>
+                <EURO>592.5</EURO>
+                <Country>TR</Country>
+                <ProductsCovered>
+                    <SequenceNumber>1</SequenceNumber>
+                    <Type>TPC01</Type>
+                    <CN>76090000</CN>
+                    <QuantityCovered>5</QuantityCovered>
+                    <QuantityCoveredFreeAloc>5</QuantityCoveredFreeAloc>
+                    <SupplementaryInformation>Supplementary information</SupplementaryInformation>
+                    <AdditionalInformation>Additional information</AdditionalInformation>
+                    <Measure>
+                        <NetMass>5</NetMass>
+                        <MeasurementUnit>01</MeasurementUnit>
+                    </Measure>
+                </ProductsCovered>
+            </CarbonPriceDue>
+            <RemarksEmissions>
+                <SequenceNumber>0</SequenceNumber>
+                <AdditionalInformation>Emission's additional information</AdditionalInformation>
+            </RemarksEmissions>
+        </GoodsEmissions>
+    </ImportedGood> 
+</QReport>

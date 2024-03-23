@@ -33,7 +33,7 @@ func GetRemarksEmissions(dbClient *data.MongoDBClient) HandlerFunc {
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
-		if err := json.NewEncoder(w).Encode(report.ImportedGoods.Remarks); err != nil {
+		if err := json.NewEncoder(w).Encode(report.ImportedGood.Remarks); err != nil {
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusInternalServerError,
 				Message:     "Internal Server Error",

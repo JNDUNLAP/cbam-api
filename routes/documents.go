@@ -38,7 +38,7 @@ func GetSupportingDocuments(dbClient *data.MongoDBClient) HandlerFunc {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		if err := json.NewEncoder(w).Encode(report.ImportedGoods.SupportingDocuments); err != nil {
+		if err := json.NewEncoder(w).Encode(report.ImportedGood.SupportingDocuments); err != nil {
 			errors.WriteError(w, r, &model.Error{
 				StatusCode:  http.StatusInternalServerError,
 				Message:     "Internal Server Error",
