@@ -4,6 +4,10 @@
 - Turn complex XML Reports into REST endpoints.
 - Custom CBAM types validate report structure at the character level.
 
+## Dependencies
+`"github.com/joho/godotenv"`
+`go.mongodb.org/mongo-driver`
+
 ## Installation
 
 [Install Go](https://go.dev/doc/install)
