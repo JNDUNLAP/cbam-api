@@ -32,7 +32,7 @@ go mod download
 ## Environment Variables
 
 - Create .env file
-- Set values for the following varaibles
+- Set values for the following
 ```
 PORT=8888
 MONGODB_URI=your_mongodb_uri
