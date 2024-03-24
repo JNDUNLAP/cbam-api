@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -213,12 +212,11 @@ func UnmarshalReport(file io.Reader) (QReport, error) {
 	return report, nil
 }
 
-func DataModelTest() {
-	fmt.Println("\nTesting Data Model Against EU Standards...")
+func DataModelValidate() error {
+	fmt.Println("\nTesting Data Model Against EU Report Standards...\n")
 	report, err := GetReport()
 	if err != nil {
-		fmt.Println(err)
-		return
+		return err // instead of printing and returning
 	}
 
 	validators := map[string]Validator{
@@ -229,8 +227,7 @@ func DataModelTest() {
 
 	err = ValidateStruct(report, validators)
 	if err != nil {
-		log.Fatal("Data Model: FAILED: ", err)
-	} else {
-		fmt.Println("Data Model: PASSED")
+		return fmt.Errorf("failed details %s", err)
 	}
+	return nil
 }

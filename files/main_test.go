@@ -7,7 +7,7 @@ import (
 )
 
 func TestUnmarshalReport(t *testing.T) {
-	const dirPath = "xml/"
+	const dirPath = "xml/report/"
 	const fileName = "Sample_CBAM_Quarterly_Report.xml"
 
 	file, err := os.Open(dirPath + fileName)
@@ -20,7 +20,7 @@ func TestUnmarshalReport(t *testing.T) {
 	if err != nil {
 		t.Fatalf("UnmarshalReport failed: %v", err)
 	}
-	if report.ReportId == "" {
+	if report.DraftReportId == "" {
 		t.Errorf("ReportId is empty, but it was expected to be populated")
 	}
 

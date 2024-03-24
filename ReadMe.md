@@ -1,12 +1,12 @@
 # CBAM API
 
-- Leverage MongoDB for CBAM data
-- Turn complex XML Reports into REST endpoints.
+- Leverage MongoDB for CBAM Reports
+- Turn archaic CBAM XML into modern REST endpoints.
 - Custom CBAM types validate report structure at the character level.
 
 ## Dependencies
-- ##### `github.com/joho/godotenv`
-- ##### `go.mongodb.org/mongo-driver`
+- `github.com/joho/godotenv`
+- `go.mongodb.org/mongo-driver`
 
 ## Installation
 
