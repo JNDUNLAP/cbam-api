@@ -93,7 +93,7 @@ type CommodityCodeType struct {
 }
 
 type CommodityDetailsType struct {
-	Description STRING512 // Assuming aRANGE512 should map to a large enough predefined type
+	Description STRING512 
 }
 
 type OriginCountryType struct {
@@ -141,7 +141,7 @@ type MeasureProcedureType struct {
 }
 
 type SpecialReferencesType struct {
-	AdditionalInformation STRING128 // Assuming aRANGE512 maps to a large enough predefined type
+	AdditionalInformation STRING128
 }
 
 type TotalEmissionsType struct {
