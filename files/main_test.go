@@ -1,7 +1,7 @@
 package files_test
 
 import (
-	"dunlap/files"
+	"cbam_api/files"
 	"os"
 	"testing"
 )

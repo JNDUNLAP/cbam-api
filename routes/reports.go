@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"dunlap/data"
-	"dunlap/errors"
-	"dunlap/model"
+	"cbam_api/data"
+	"cbam_api/errors"
+	"cbam_api/model"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"

@@ -1,4 +1,4 @@
-module dunlap
+module cbam_api
 
 go 1.20
 

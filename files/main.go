@@ -1,7 +1,7 @@
 package files
 
 import (
-	"dunlap/model"
+	"cbam_api/model"
 	"encoding/xml"
 	"fmt"
 	"io"

@@ -1,8 +1,8 @@
 package data
 
 import (
+	"cbam_api/model"
 	"context"
-	"dunlap/model"
 	"fmt"
 	"log"
 	"time"

@@ -213,7 +213,7 @@ func UnmarshalReport(file io.Reader) (QReport, error) {
 }
 
 func DataModelValidate() error {
-	fmt.Println("\nTesting Data Model Against EU Report Standards...\n")
+	fmt.Println("Testing Data Model Against EU Reporting Standards...")
 	report, err := GetReport()
 	if err != nil {
 		return err // instead of printing and returning

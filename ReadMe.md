@@ -16,8 +16,8 @@
 
 Clone this repository
 
-```bash
-git clone https://github.com/jndunlap/cbam-api.git 
+```
+git clone https://github.com/jncbam_api/cbam-api.git 
 ```
 
 ## Install Dependencies
@@ -25,8 +25,7 @@ git clone https://github.com/jndunlap/cbam-api.git
 - Navigate to the project directory
 - Install dependencies:
 
-```bash
-cd ~/go/src/github.com/jndunlap/cbam-api
+```
 go mod download
 ```
 
@@ -34,22 +33,33 @@ go mod download
 
 - Create .env file
 - Set values for the following varaibles
-```bash
+```
 PORT=8888
 MONGODB_URI=your_mongodb_uri
 DB_NAME=your_database_name
 ```
+
+## Test Data Model
+```
+go test
+```
+
+Expected Result
+
+```
+Testing Data Model Against EU Reporting Standards...
+PASS
+ok      cbam_api        0.194s
+```
+
+
 ## Run
 
-```bash
+```
 air
 ```
 
-## This program is incomplete - use at your own risk. 
 
-### Testing Data Model Against EU Standards
-
-- **Data Model**: PASSED
 
 ### CBAM API Routes
 
@@ -68,4 +78,7 @@ air
   - `DELETE /reports/delete/{id}`
 
 `2024/03/23 19:02:56 CBAM API is Running on PORT 8080`
+
+## This program is incomplete - use at your own risk. 
+
 

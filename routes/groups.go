@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"dunlap/data"
+	"cbam_api/data"
 )
 
 func QuarterlyReportGroup(router *Router, client *data.MongoDBClient) {

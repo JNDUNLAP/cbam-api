@@ -1,7 +1,7 @@
 package errors
 
 import (
-	"dunlap/model"
+	"cbam_api/model"
 	"encoding/json"
 	"log"
 	"net/http"

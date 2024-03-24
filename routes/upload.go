@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"dunlap/data"
-	"dunlap/files"
+	"cbam_api/data"
+	"cbam_api/files"
 	"encoding/json"
 	"net/http"
 )
