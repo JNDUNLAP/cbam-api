@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
+	"path/filepath"
 )
 
 func XML(r *http.Request) (model.QReport, error) {
@@ -46,5 +48,25 @@ func UnmarshalReport(file io.Reader) (model.QReport, error) {
 	if err := xml.Unmarshal(fileBytes, &report); err != nil {
 		return model.QReport{}, fmt.Errorf("failed to unmarshal XML: %w", err)
 	}
+	return report, nil
+}
+
+func GetReport() (model.QReport, error) {
+	const dirPath = "files/xml/report/"
+	const fileName = "Sample_CBAM_Quarterly_Report.xml"
+
+	file, err := os.Open(filepath.Join(dirPath, fileName))
+	if err != nil {
+		fmt.Printf("Failed to open file: %v\n", err)
+		return model.QReport{}, err
+	}
+	defer file.Close()
+
+	report, err := UnmarshalReport(file)
+	if err != nil {
+		fmt.Printf("UnmarshalReport failed: %v\n", err)
+		return model.QReport{}, err
+	}
+
 	return report, nil
 }
