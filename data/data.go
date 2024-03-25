@@ -5,12 +5,17 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
+
+func isAllowedCollectionName(collectionName string) bool {
+	return collectionName == os.Getenv("REPORTCOLLECTION")
+}
 
 type MongoDBClient struct {
 	Client   *mongo.Client
@@ -56,6 +61,9 @@ func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
 }
 
 func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, collectionName string) error {
+	if !isAllowedCollectionName(collectionName) {
+		return fmt.Errorf("operation not allowed on collection: %s", collectionName)
+	}
 	opts := options.Update().SetUpsert(true)
 	update := bson.M{"$set": report}
 	_, err := m.Client.Database(m.dataName).Collection(collectionName).UpdateOne(context.Background(), bson.M{"ReportId": report.DraftReportId}, update, opts)
@@ -66,6 +74,9 @@ func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, coll
 }
 
 func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
+	if !isAllowedCollectionName(collectionName) {
+		return fmt.Errorf("operation not allowed on collection: %s", collectionName)
+	}
 	_, err := m.Client.Database(m.dataName).Collection(collectionName).DeleteMany(context.Background(), bson.M{})
 	if err != nil {
 		return fmt.Errorf("failed to delete all quarterly reports: %w", err)

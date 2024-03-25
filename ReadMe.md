@@ -37,6 +37,7 @@ go mod download
 PORT=8888
 MONGODB_URI=your_mongodb_uri
 DB_NAME=your_database_name
+REPORTCOLLECTION=your_collection_name
 ```
 
 ## Test Data Model
