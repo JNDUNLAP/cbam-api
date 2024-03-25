@@ -56,10 +56,9 @@ func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
 }
 
 func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, collectionName string) error {
-	filter := bson.M{"ReportId": report.DraftReportId}
 	opts := options.Update().SetUpsert(true)
 	update := bson.M{"$set": report}
-	_, err := m.Client.Database(m.dataName).Collection(collectionName).UpdateOne(context.Background(), filter, update, opts)
+	_, err := m.Client.Database(m.dataName).Collection(collectionName).UpdateOne(context.Background(), bson.M{"ReportId": report.DraftReportId}, update, opts)
 	if err != nil {
 		return fmt.Errorf("failed to upsert quarterly report: %w", err)
 	}
