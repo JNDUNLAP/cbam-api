@@ -26,19 +26,20 @@ type ReportRepository interface {
 	GetQReport(filter interface{}) (*model.QReport, error)
 }
 
-func DBClient(uri, dataName string) (*MongoDBClient, error) {
-	clientOptions := options.Client().ApplyURI(uri)
+func DBClient(mongoURI string) (*MongoDBClient, error) {
+	clientOptions := options.Client().ApplyURI(mongoURI)
 	client, err := mongo.Connect(context.Background(), clientOptions)
 	if err != nil {
-		return nil, fmt.Errorf("error connecting to MongoDB: %w", err)
+		return nil, err
 	}
+
 	err = client.Ping(context.Background(), nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to ping MongoDB: %w", err)
+		return nil, err
 	}
+
 	return &MongoDBClient{
-		Client:   client,
-		dataName: dataName,
+		Client: client,
 	}, nil
 }
 
@@ -84,10 +85,18 @@ func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
 	return nil
 }
 
-func SetupDatabase(MongoUri, dataName string) *MongoDBClient {
-	client, err := DBClient(MongoUri, dataName)
+// func SetupDatabase(MongoUri, dataName string) *MongoDBClient {
+// 	client, err := DBClient(MongoUri, dataName)
+// 	if err != nil {
+// 		log.Fatalf("Failed to connect to MongoDB: %v", err)
+// 	}
+// 	return client
+// }
+
+func SetupDatabase(mongoURI string) (*MongoDBClient, error) {
+	client, err := DBClient(mongoURI)
 	if err != nil {
-		log.Fatalf("Failed to connect to MongoDB: %v", err)
+		return nil, fmt.Errorf("failed to connect to MongoDB: %v", err)
 	}
-	return client
+	return client, nil
 }

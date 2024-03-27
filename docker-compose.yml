@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      target: ${BUILD_TARGET}
+      dockerfile: Dockerfile
+      args:
+        APP_USER: ${APP_USER}
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: cbam-api-database
+    image: mongo:latest
+    command: ["--config", "/etc/mongo/mongod.conf"]
+    volumes:
+      - ./mongod.conf:/etc/mongo/mongod.conf
+      - ./log:/var/log/mongodb
+    logging:
+      driver: none
+
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+
