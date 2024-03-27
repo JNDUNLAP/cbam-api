@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install Go](https://go.dev/doc/install)
+[Install Docker](https://docs.docker.com/engine/install/)
 
 ## Clone the Repository
 
@@ -20,44 +20,29 @@ Clone this repository
 git clone https://github.com/jncbam_api/cbam-api.git 
 ```
 
-## Install Dependencies
-
-- Navigate to the project directory
-- Install dependencies:
-
-```
-go mod download
-```
 
 ## Environment Variables
 
 - Create .env file
 - Set values for the following
 ```
-PORT=8888
-MONGODB_URI=your_mongodb_uri
-DB_NAME=your_database_name
-REPORTCOLLECTION=your_collection_name
+APP_USER=appuser
+BUILD_TARGET=development
+# BUILD_TARGET=production
+MONGO_ROOT_USERNAME=admin
+MONGO_ROOT_PASSWORD=secret
+MONGO_HOST=mongodb
+MONGO_PORT=27017
+DB_NAME=mydatabase
+REPORTCOLLECTION=test_report
 ```
 
-## Test Data Model
-```
-go test
-```
-
-Expected Result
-
-```
-Testing Data Model Against EU Reporting Standards...
-PASS
-ok      cbam_api        0.194s
-```
 
 
 ## Run
 
 ```
-air
+docker-compose up --build
 ```
 
 
