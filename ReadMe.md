@@ -1,4 +1,4 @@
-![cbam-apicbam](https://github.com/JNDUNLAP/cbam-api/assets/125301054/160bf4f2-b831-4821-850d-ebbf84a59a78)
+![cbam-apicbam-2](https://github.com/JNDUNLAP/cbam-api/assets/125301054/3ccfc631-f328-48fd-9d5f-b17b909e2e46)
 
 
 - Leverage MongoDB for CBAM Reports
