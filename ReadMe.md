@@ -1,14 +1,14 @@
-# CBAM-API Documentation
-
-## Introduction
-
-CBAM-API is a versatile tool designed to streamline emissions management and reporting processes. It empowers users to centralize supplier embedded emissions for analysis, optimize carbon obligation forecasts, and automate data collection, validation, and reporting.
-
-## Use Cases
+# CBAM-API 
 
 - **Centralize Emissions**: Gather supplier embedded emissions data for comprehensive analysis.
 - **Optimize Forecasts**: Align carbon obligation forecasts with real-time market activities.
 - **Automate Reporting**: Streamline the collection, validation, and reporting of emissions data.
+- 
+![cbam-apicbam-2](https://github.com/JNDUNLAP/cbam-api/assets/125301054/3ccfc631-f328-48fd-9d5f-b17b909e2e46)
+
+## Introduction
+
+CBAM-API is a versatile tool designed to streamline emissions management and reporting processes. It empowers users to centralize supplier embedded emissions for analysis, optimize carbon obligation forecasts, and automate data collection, validation, and reporting.
 
 ## Features
 
