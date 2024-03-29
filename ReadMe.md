@@ -8,7 +8,7 @@
 
 ## Introduction
 
-CBAM-API is a open platform designed to streamline emissions management and reporting processes. It empowers users to centralize supplier embedded emissions for analysis, optimize carbon obligation forecasts, and automate data collection, validation, and reporting.
+CBAM-API is a open-source platform designed to streamline emissions management and reporting processes. It empowers users to centralize supplier embedded emissions for analysis, optimize carbon obligation forecasts, and automate data collection, validation, and reporting.
 
 ## Features
 
@@ -20,6 +20,7 @@ CBAM-API is a open platform designed to streamline emissions management and repo
 
 - `github.com/joho/godotenv`
 - `go.mongodb.org/mongo-driver`
+- `https://github.com/cosmtrek/air`
 
 ## Getting Started
 
@@ -41,22 +42,20 @@ CBAM-API is a open platform designed to streamline emissions management and repo
     - Define the following variables:
 
     ```env
-    APP_USER=appuser
+    APP_USER=some_username
     BUILD_TARGET=development
     # BUILD_TARGET=production
     MONGO_ROOT_USERNAME=admin
-    MONGO_ROOT_PASSWORD=secret
+    MONGO_ROOT_PASSWORD=super_secret_password
     MONGO_HOST=mongodb
     MONGO_PORT=27017
-    DB_NAME=mydatabase
-    REPORTCOLLECTION=test_report
+    DB_NAME=database_name
+    REPORTCOLLECTION=your_first_cbam_collection
     ```
 
 ### Usage
 
 - **Build and Run**:
-
-    Execute the following command to build and run the application using Docker Compose:
 
     ```sh
     docker-compose up --build
