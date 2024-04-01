@@ -61,20 +61,20 @@ func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
 	return qReport, nil
 }
 
-func SaveQuarterlyReportToDatabase(report *model.QReport, m *MongoDBClient, collectionName string) error {
-	if !isAllowedCollectionName(collectionName) {
-		return fmt.Errorf("operation not allowed on collection: %s", collectionName)
-	}
+func UploadReport(ctx context.Context, report *model.QReport, m *MongoDBClient, collectionName string) error {
+
 	opts := options.Update().SetUpsert(true)
 	update := bson.M{"$set": report}
-	_, err := m.Client.Database(m.dataName).Collection(collectionName).UpdateOne(context.Background(), bson.M{"ReportId": report.DraftReportId}, update, opts)
+
+	_, err := m.Client.Database("Mongo_Test").Collection(collectionName).UpdateOne(ctx, bson.M{"ReportId": report.ReportId}, update, opts)
 	if err != nil {
 		return fmt.Errorf("failed to upsert quarterly report: %w", err)
 	}
+
 	return nil
 }
 
-func (m *MongoDBClient) DeleteAllQReports(collectionName string) error {
+func (m *MongoDBClient) DeleteReports(collectionName string) error {
 	if !isAllowedCollectionName(collectionName) {
 		return fmt.Errorf("operation not allowed on collection: %s", collectionName)
 	}

@@ -7,7 +7,7 @@ import (
 func QuarterlyReportGroup(router *Router, client *data.MongoDBClient) {
 	router.Handle("QuarterlyReports", "GET", "/reports", GetAllQuarterlyReports(client))
 	router.Handle("QuarterlyReports", "GET", "/reports/{id}", GetQuarterlyReport(client))
-	router.Handle("QuarterlyReports", "POST", "/reports/create", CreateQuarterlyReport(client))
+	// router.Handle("QuarterlyReports", "POST", "/reports/create", CreateQuarterlyReport(client))
 	router.Handle("QuarterlyReports", "DELETE", "/reports/delete/{id}", DeleteAllQuarterlyReports(client))
 }
 

@@ -5,9 +5,7 @@ import (
 	"cbam_api/errors"
 	"cbam_api/model"
 	"encoding/json"
-	"encoding/xml"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 
@@ -73,75 +71,75 @@ func GetAllQuarterlyReports(dbClient *data.MongoDBClient) HandlerFunc {
 	}
 }
 
-func CreateQuarterlyReport(dbClient *data.MongoDBClient) HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
-		collectionName := r.URL.Query().Get("collectionName")
-		if collectionName == "" {
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusBadRequest,
-				Message:     "Bad Request",
-				ErrorDetail: "Missing collectionName.",
-			})
-			return
-		}
+// func CreateQuarterlyReport(dbClient *data.MongoDBClient) HandlerFunc {
+// 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
+// 		collectionName := r.URL.Query().Get("collectionName")
+// 		if collectionName == "" {
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusBadRequest,
+// 				Message:     "Bad Request",
+// 				ErrorDetail: "Missing collectionName.",
+// 			})
+// 			return
+// 		}
 
-		r.ParseMultipartForm(32 << 20)
+// 		r.ParseMultipartForm(32 << 20)
 
-		file, _, err := r.FormFile("xmlFile")
-		if err != nil {
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusBadRequest,
-				Message:     "Bad Request",
-				ErrorDetail: "Failed to parse XML file.",
-			})
-			return
-		}
-		defer file.Close()
+// 		file, _, err := r.FormFile("xmlFile")
+// 		if err != nil {
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusBadRequest,
+// 				Message:     "Bad Request",
+// 				ErrorDetail: "Failed to parse XML file.",
+// 			})
+// 			return
+// 		}
+// 		defer file.Close()
 
-		fileBytes, err := io.ReadAll(file)
-		if err != nil {
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusInternalServerError,
-				Message:     "Internal Server Error",
-				ErrorDetail: "Failed to read XML file.",
-			})
-			return
-		}
+// 		fileBytes, err := io.ReadAll(file)
+// 		if err != nil {
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusInternalServerError,
+// 				Message:     "Internal Server Error",
+// 				ErrorDetail: "Failed to read XML file.",
+// 			})
+// 			return
+// 		}
 
-		var newReport model.QReport
-		if err := xml.Unmarshal(fileBytes, &newReport); err != nil {
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusBadRequest,
-				Message:     "Bad Request",
-				ErrorDetail: "Failed to unmarshal XML data into QReport struct.",
-			})
-			return
-		}
+// 		var newReport model.QReport
+// 		if err := xml.Unmarshal(fileBytes, &newReport); err != nil {
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusBadRequest,
+// 				Message:     "Bad Request",
+// 				ErrorDetail: "Failed to unmarshal XML data into QReport struct.",
+// 			})
+// 			return
+// 		}
 
-		err = data.SaveQuarterlyReportToDatabase(&newReport, dbClient, collectionName)
-		if err != nil {
-			errString := fmt.Sprintf("Failed to save quarterly report: %s", err)
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusInternalServerError,
-				Message:     "Internal Server Error",
-				ErrorDetail: errString,
-			})
-			return
-		}
+// 		err = data.SaveQuarterlyReportToDatabase(&newReport, dbClient, collectionName)
+// 		if err != nil {
+// 			errString := fmt.Sprintf("Failed to save quarterly report: %s", err)
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusInternalServerError,
+// 				Message:     "Internal Server Error",
+// 				ErrorDetail: errString,
+// 			})
+// 			return
+// 		}
 
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusCreated)
-		response := map[string]string{"message": "Quarterly report created successfully"}
-		if err := json.NewEncoder(w).Encode(response); err != nil {
-			errors.WriteError(w, r, &model.Error{
-				StatusCode:  http.StatusInternalServerError,
-				Message:     "Internal Server Error",
-				ErrorDetail: "Failed to encode the response into JSON.",
-			})
-			return
-		}
-	}
-}
+// 		w.Header().Set("Content-Type", "application/json")
+// 		w.WriteHeader(http.StatusCreated)
+// 		response := map[string]string{"message": "Quarterly report created successfully"}
+// 		if err := json.NewEncoder(w).Encode(response); err != nil {
+// 			errors.WriteError(w, r, &model.Error{
+// 				StatusCode:  http.StatusInternalServerError,
+// 				Message:     "Internal Server Error",
+// 				ErrorDetail: "Failed to encode the response into JSON.",
+// 			})
+// 			return
+// 		}
+// 	}
+// }
 
 func DeleteAllQuarterlyReports(dbClient *data.MongoDBClient) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
@@ -164,7 +162,7 @@ func DeleteAllQuarterlyReports(dbClient *data.MongoDBClient) HandlerFunc {
 			return
 		}
 
-		err := dbClient.DeleteAllQReports(collectionName)
+		err := dbClient.DeleteReports(collectionName)
 		if err != nil {
 			errString := fmt.Sprintf("Failed to delete all reports from collection %s: %s", collectionName, err)
 			errors.WriteError(w, r, &model.Error{

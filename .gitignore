@@ -2,3 +2,4 @@
 .DS_Store
 tmp/
 cbam_api
+mongod.log

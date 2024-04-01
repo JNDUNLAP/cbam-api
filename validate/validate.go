@@ -95,13 +95,14 @@ func DataModelValidate() error {
 	fmt.Println("Testing Data Model Against EU Reporting Standards...")
 	report, err := files.GetReport()
 	if err != nil {
-		return err // instead of printing and returning
+		return err
 	}
 
 	validators := map[string]Validator{
-		"DECIMAL": ValidateDecimals,
-		"NUMERIC": ValidateNumerics,
-		"STRING":  ValidateStrings,
+		"DECIMAL":      ValidateDecimals,
+		"NUMERIC":      ValidateNumerics,
+		"STRING":       ValidateStrings,
+		"DateTimeFull": ValidateDateTime,
 	}
 
 	err = ValidateStruct(report, validators)

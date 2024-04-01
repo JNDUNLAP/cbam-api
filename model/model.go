@@ -1,42 +1,318 @@
 package model
 
-import "time"
+import (
+	"encoding/xml"
+)
 
-type DateTime time.Time
-type XSDecimal float64
-type XSBoolean bool
+//
 
-type DECIMAL52 float64
-type DECIMAL165 float64
-type DECIMAL166 float64
-
-type STRING3 string
-type STRING2 string
-type STRING4 string
-type STRING6 string
-type STRING5 string
-type STRING8 string
-type STRING15 string
-type STRING17 string
-type STRING22 string
-type STRING35 string
-type STRING70 string
-type STRING128 string
-type STRING256 string
-type STRING512 string
-
-type NUMERIC1 int
-type NUMERIC2 int
-type NUMERIC4 int
-type NUMERIC5 int
-type NUMERIC8 int
-
-type SimpleDate struct {
-	time.Time
+type QReport struct {
+	XMLName         xml.Name          `xml:"http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1 QReport"`
+	SubmissionDate  DateTimeFull      `xml:"SubmissionDate"`
+	ReportId        ConstrainedString `xml:"ReportId"`
+	ReportingPeriod ConstrainedString `xml:"ReportingPeriod" min:"2" max:"2"`
+	Year            ConstrainedInt    `xml:"Year" min:"4" max:"4"`
+	TotalImported   ConstrainedInt    `xml:"TotalImported" min:"1" max:"999"`
+	// TotalEmissions        TotalEmissionsType        `xml:"TotalEmissions"`
+	Declarant             DeclarantType             `xml:"Declarant"`
+	Representative        *RepresentativeType       `xml:"Representative"`
+	Importer              *ImporterType             `xml:"Importer"`
+	NationalCompetentAuth NationalCompetentAuthType `xml:"NationalCompetentAuth"`
+	Signatures            SignaturesType            `xml:"Signatures"`
+	Remarks               *RemarksType              `xml:"Remarks"`
+	ImportedGood          ImportedGood              `xml:"ImportedGood"`
 }
 
-func (d SimpleDate) FormatISO8601() string {
-	return d.Format("2006-01-02T15:04:05Z")
+type DeclarantType struct {
+	IdentificationNumber ConstrainedString `xml:"IdentificationNumber" min:"1" max:"17"`
+	Name                 ConstrainedString `xml:"Name" min:"1" max:"70"`
+	Role                 ConstrainedString `xml:"Role" min:"1" max:"5"`
+	ActorAddress         AddressType       `xml:"ActorAddress"`
+}
+type AddressType struct {
+	Country              ConstrainedString  `xml:"Country" min:"2" max:"2"`
+	SubDivision          *ConstrainedString `xml:"SubDivision" min:"1" max:"70"`
+	City                 ConstrainedString  `xml:"City" min:"1" max:"35"`
+	Street               *ConstrainedString `xml:"Street" min:"1" max:"70"`               // Optional
+	StreetAdditionalLine *ConstrainedString `xml:"StreetAdditionalLine" min:"1" max:"70"` // Optional
+	Number               *ConstrainedString `xml:"Number" min:"1" max:"35"`               // Optional
+	Postcode             *ConstrainedString `xml:"Postcode" min:"1" max:"17"`             // Optional
+	POBox                *ConstrainedString `xml:"POBox" min:"1" max:"70"`                // Optional
+}
+
+type ImporterType struct {
+	IdentificationNumber ConstrainedString `xml:"IdentificationNumber" min:"1" max:"17"`
+	Name                 ConstrainedString `xml:"Name" min:"1" max:"70"`
+	ImporterAddress      AddressType       `xml:"ImporterAddress"`
+}
+
+type RepresentativeType struct {
+	IdentificationNumber  ConstrainedString `xml:"IdentificationNumber" min:"1" max:"17"`
+	Name                  ConstrainedString `xml:"Name" min:"1" max:"70"`
+	RepresentativeAddress AddressType       `xml:"RepresentativeAddress"`
+}
+
+type NationalCompetentAuthType struct {
+	ReferenceNumber ConstrainedString `xml:"ReferenceNumber" min:"1" max:"128"`
+}
+
+type ReportConfirmationType struct {
+	GlobalDataConfirmation  bool              `xml:"GlobalDataConfirmation"`
+	UseOfDataConfirmation   bool              `xml:"UseOfDataConfirmation"`
+	SignatureDate           ConstrainedString `xml:"SignatureDate" min:"10" max:"10"`
+	SignaturePlace          ConstrainedString `xml:"SignaturePlace" min:"1" max:"128"`
+	Signature               ConstrainedString `xml:"Signature" min:"1" max:"128"`
+	PositionOfPersonSending ConstrainedString `xml:"PositionOfPersonSending" min:"1" max:"128"`
+}
+
+type SignaturesType struct {
+	ReportConfirmation                ReportConfirmationType                 `xml:"ReportConfirmation"`
+	ApplicableMethodologyConfirmation *ApplicableMethodologyConfirmationType `xml:"ApplicableMethodologyConfirmation"`
+}
+
+type ApplicableMethodologyConfirmationType struct {
+	MethodologyUsed              bool              `xml:"MethodologyUsed"`
+	MethodologyConfirmationDate  ConstrainedString `xml:"MethodologyConfirmationDate" min:"10" max:"10"` // Assuming ISO date format (YYYY-MM-DD) for the date.
+	MethodologyConfirmationPlace ConstrainedString `xml:"MethodologyConfirmationPlace" min:"1" max:"128"`
+}
+
+type RemarksType struct {
+	AdditionalInformation ConstrainedString `xml:"AdditionalInformation" min:"1" max:"128"`
+}
+
+type ImportedGood struct {
+	ItemNumber          int                  `xml:"ItemNumber"`
+	Representative      *RepresentativeType  `xml:"Representative"` // Optional, no min/max applicable
+	Importer            *ImporterType        `xml:"Importer"`       // Optional, no min/max applicable
+	CommodityCode       *CommodityCodeType   `xml:"CommodityCode"`  // Optional, no min/max applicable
+	OriginCountry       OriginCountryType    `xml:"OriginCountry"`
+	ImportedQuantity    ImportedQuantityType `xml:"ImportedQuantity"`
+	MeasureImported     MeasureType          `xml:"MeasureImported"`
+	TotalEmissions      TotalEmissionsType   `xml:"TotalEmissions"`
+	SupportingDocuments SupportingDocument   `xml:"SupportingDocuments"`
+	Remarks             *RemarksType         `xml:"Remarks"`
+	GoodsEmissions      []GoodsEmissionsType `xml:"GoodsEmissions"`
+}
+
+type CommodityCodeType struct {
+	HsCode           ConstrainedString    `xml:"HsCode" min:"6" max:"6"`
+	CnCode           ConstrainedString    `xml:"CnCode" min:"2" max:"2"`
+	CommodityDetails CommodityDetailsType `xml:"CommodityDetails"`
+}
+
+type CommodityDetailsType struct {
+	Description ConstrainedString `xml:"Description" min:"1" max:"512"`
+}
+
+type OriginCountryType struct {
+	Country ConstrainedString `xml:"Country" min:"2" max:"2"`
+}
+
+type ImportedQuantityType struct {
+	SequenceNumber           int                    `xml:"SequenceNumber"`
+	Procedure                *ProcedureType         `xml:"Procedure"`
+	ImportArea               ImportAreaType         `xml:"ImportArea"`
+	MeasureProcedureImported MeasureProcedureType   `xml:"MeasureProcedureImported"`
+	SpecialReferences        *SpecialReferencesType `xml:"SpecialReferences"`
+}
+
+type ProcedureType struct {
+	RequestedProc        ConstrainedString        `xml:"RequestedProc" min:"2" max:"2"`
+	PreviousProc         *ConstrainedString       `xml:"PreviousProc" min:"2" max:"2"`
+	InwardProcessingInfo InwardProcessingInfoType `xml:"InwardProcessingInfo"`
+}
+
+type InwardProcessingInfoType struct {
+	MemberStateAuth     ConstrainedString `xml:"MemberStateAuth" min:"2" max:"2"`
+	DischargeBillWaiver ConstrainedString `xml:"DischargeBillWaiver" min:"1" max:"1"`
+	Authorisation       ConstrainedString `xml:"Authorisation" min:"1" max:"128"`
+	StartTime           ConstrainedString `xml:"StartTime" min:"8" max:"8"`
+	EndTime             ConstrainedString `xml:"EndTime" min:"8" max:"8"`
+	Deadline            ConstrainedString `xml:"Deadline" min:"8" max:"8"`
+}
+
+type ImportAreaType struct {
+	ImportArea ConstrainedString `xml:"ImportArea" min:"5" max:"5"`
+}
+
+type MeasureType struct {
+	NetMass            *ConstrainedDecimal `xml:"NetMass"  min:"1" max:"999"`
+	SupplementaryUnits *ConstrainedDecimal `xml:"SupplementaryUnits"`
+	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"5" max:"5"`
+}
+
+type MeasureProcedureType struct {
+	Indicator          ConstrainedString   `xml:"Indicator" min:"1" max:"1"`
+	NetMass            *ConstrainedDecimal `xml:"NetMass" min:"1" max:"999"`
+	SupplementaryUnits *ConstrainedDecimal `xml:"SupplementaryUnits"`
+	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"5" max:"5"`
+}
+
+type SpecialReferencesType struct {
+	AdditionalInformation ConstrainedString `xml:"AdditionalInformation" min:"1" max:"128"`
+}
+
+type TotalEmissionsType struct {
+	EmissionsPerUnit ConstrainedDecimal `xml:"EmissionsPerUnit"`
+	OverallEmissions ConstrainedDecimal `xml:"OverallEmissions"`
+	TotalDirect      ConstrainedDecimal `xml:"TotalDirect"`
+	TotalIndirect    ConstrainedDecimal `xml:"TotalIndirect"`
+	MeasurementUnit  ConstrainedString  `xml:"MeasurementUnit" min:"5" max:"5"`
+}
+
+type SupportingDocument struct {
+	SequenceNumber    int                `xml:"SequenceNumber"`
+	Type              ConstrainedString  `xml:"Type" min:"8" max:"8"`
+	Country           *ConstrainedString `xml:"Country" min:"2" max:"2"` // Optional
+	ReferenceNumber   ConstrainedString  `xml:"ReferenceNumber" min:"1" max:"70"`
+	LineItemNumber    *ConstrainedString `xml:"LineItemNumber" min:"5" max:"5"`   // Assuming NUMERIC5 implies length of 5
+	IssuingAuthName   *ConstrainedString `xml:"IssuingAuthName" min:"1" max:"70"` // Optional
+	ValidityStartDate SimpleDate         `xml:"ValidityStartDate"`                // Optional
+	ValidityEndDate   SimpleDate         `xml:"ValidityEndDate"`                  // Optional
+	Description       *ConstrainedString `xml:"Description" min:"1" max:"128"`    // Optional
+	Attachment        *AttachmentType    `xml:"Attachment"`                       // Assuming AttachmentType is defined elsewhere.
+}
+
+type AttachmentType struct {
+	Filename ConstrainedString  `min:"1" max:"128"`
+	URI      *ConstrainedString `min:"1" max:"128"`
+	MIME     ConstrainedString  `min:"1" max:"700"`
+	Binary   byte               // base64Binary maps to byte in Go
+}
+type GoodsEmissionsType struct {
+	SequenceNumber             int                            `xml:"SequenceNumber"`
+	ProductionCountry          *ConstrainedString             `xml:"ProductionCountry" min:"2" max:"2"` // Optional
+	InstallationOperator       *InstallationOperatorType      `xml:"InstallationOperator"`              // Optional
+	Installation               *InstallationType              `xml:"Installation"`                      // Optional
+	ProducedMeasure            MeasureType                    `xml:"ProducedMeasure"`
+	InstallationEmissions      InstallationEmissionsType      `xml:"InstallationEmissions"`
+	DirectEmissions            DirectEmissionsType            `xml:"DirectEmissions"`
+	IndirectEmissions          *IndirectEmissionsType         `xml:"IndirectEmissions"` // Optional
+	ProdMethodQualifyingParams ProdMethodQualifyingParamsType `xml:"ProdMethodQualifyingParams"`
+	SupportingDocuments        SupportingDocument             `xml:"SupportingDocuments"`
+	CarbonPriceDue             CarbonPriceDueType             `xml:"CarbonPriceDue"`
+	RemarksEmissions           RemarksEmissionsType           `xml:"RemarksEmissions"`
+}
+
+type InstallationOperatorType struct {
+	OperatorId      ConstrainedString  `xml:"OperatorId" min:"1" max:"17"`
+	OperatorName    ConstrainedString  `xml:"OperatorName" min:"1" max:"70"`
+	OperatorAddress AddressType        `xml:"OperatorAddress"`
+	ContactDetails  ContactDetailsType `xml:"ContactDetails"`
+}
+
+type InstallationType struct {
+	InstallationId   ConstrainedString       `xml:"InstallationId" min:"1" max:"17"`
+	InstallationName ConstrainedString       `xml:"InstallationName" min:"1" max:"128"`
+	EconomicActivity *ConstrainedString      `xml:"EconomicActivity" min:"1" max:"128"` // Optional
+	Address          InstallationAddressType `xml:"Address"`
+}
+
+type InstallationAddressType struct {
+	EstablishmentCountry ConstrainedString  `xml:"EstablishmentCountry" min:"2" max:"2"`
+	SubDivision          *ConstrainedString `xml:"SubDivision" min:"1" max:"35"`          // Optional
+	City                 *ConstrainedString `xml:"City" min:"1" max:"35"`                 // Optional
+	Street               *ConstrainedString `xml:"Street" min:"1" max:"70"`               // Optional
+	StreetAdditionalLine *ConstrainedString `xml:"StreetAdditionalLine" min:"1" max:"70"` // Optional
+	Number               *ConstrainedString `xml:"Number" min:"1" max:"35"`               // Optional
+	Postcode             *ConstrainedString `xml:"Postcode" min:"1" max:"17"`             // Optional
+	POBox                *ConstrainedString `xml:"POBox" min:"1" max:"70"`                // Optional
+	PlotParcelNumber     *ConstrainedString `xml:"PlotParcelNumber" min:"1" max:"15"`     // Optional
+	UNLOCODE             *ConstrainedString `xml:"UNLOCODE" min:"1" max:"17"`             // Optional
+	Latitude             *ConstrainedString `xml:"Latitude" min:"1" max:"17"`             // Optional
+	Longitude            *ConstrainedString `xml:"Longitude" min:"1" max:"17"`            // Optional
+	CoordinatesType      *ConstrainedString `xml:"CoordinatesType" min:"1" max:"5"`       // Optional
+}
+
+type DirectEmissionsType struct {
+	DeterminationType                  *ConstrainedString  `xml:"DeterminationType" min:"1" max:"5"`            // Optional
+	DeterminationTypeElectricity       *ConstrainedString  `xml:"DeterminationTypeElectricity" min:"1" max:"5"` // Optional
+	ApplicableReportingTypeMethodology ConstrainedString   `xml:"ApplicableReportingTypeMethodology" min:"1" max:"5"`
+	ApplicableReportingMethodology     *ConstrainedString  `xml:"ApplicableReportingMethodology" min:"1" max:"256"`   // Optional
+	SpecificEmbeddedEmissions          *ConstrainedString  `xml:"SpecificEmbeddedEmissions" min:"1" max:"165"`        // Optional, represent DECIMAL165 as string
+	OtherSourceIndication              *ConstrainedString  `xml:"OtherSourceIndication" min:"1" max:"256"`            // Optional
+	EmissionFactorSourceElectricity    *ConstrainedString  `xml:"EmissionFactorSourceElectricity" min:"1" max:"5"`    // Optional
+	EmissionFactor                     *ConstrainedString  `xml:"EmissionFactor" min:"1" max:"165"`                   // Optional, represent DECIMAL165 as string
+	ElectricityImported                *ConstrainedDecimal `xml:"ElectricityImported"`                                // Optional
+	TotalEmbeddedElectricityImported   *ConstrainedString  `xml:"TotalEmbeddedElectricityImported" min:"1" max:"165"` // Optional, represent DECIMAL165 as string
+	MeasurementUnit                    ConstrainedString   `xml:"MeasurementUnit" min:"1" max:"5"`
+	EmissionFactorSourceValue          *ConstrainedString  `xml:"EmissionFactorSourceValue" min:"1" max:"512"` // Optional
+	Justification                      *ConstrainedString  `xml:"Justification" min:"1" max:"512"`             // Optional
+	ConditionalityFulfillment          *ConstrainedString  `xml:"ConditionalityFulfillment" min:"1" max:"512"` // Optional
+}
+
+type ContactDetailsType struct {
+	Name  ConstrainedString `xml:"Name" min:"1" max:"70"`
+	Phone ConstrainedString `xml:"Phone" min:"1" max:"35"`
+	Email ConstrainedString `xml:"Email" min:"1" max:"256"`
+}
+
+type ProdMethodQualifyingParamsType struct {
+	SequenceNumber               int                      `xml:"SequenceNumber"`
+	MethodId                     ConstrainedString        `xml:"MethodId" min:"1" max:"5"`
+	MethodName                   ConstrainedString        `xml:"MethodName" min:"1" max:"256"`
+	SteelMillNumber              *ConstrainedString       `xml:"SteelMillNumber" min:"1" max:"256"`       // Optional
+	AdditionalInformation        *ConstrainedString       `xml:"AdditionalInformation" min:"1" max:"512"` // Optional
+	DirectQualifyingParameters   QualifyingParametersType `xml:"DirectQualifyingParameters"`
+	IndirectQualifyingParameters QualifyingParametersType `xml:"IndirectQualifyingParameters"`
+}
+
+type QualifyingParametersType struct {
+	SequenceNumber        int                `xml:"SequenceNumber"`
+	DeterminationType     ConstrainedString  `xml:"DeterminationType" min:"1" max:"5"`
+	ParameterId           ConstrainedString  `xml:"ParameterId" min:"1" max:"5"`
+	ParameterName         ConstrainedString  `xml:"ParameterName" min:"1" max:"256"`
+	Description           *ConstrainedString `xml:"Description" min:"1" max:"256"` // Optional
+	ParameterValueType    ConstrainedString  `xml:"ParameterValueType" min:"1" max:"256"`
+	ParameterValue        ConstrainedString  `xml:"ParameterValue" min:"1" max:"256"`
+	AdditionalInformation *ConstrainedString `xml:"AdditionalInformation" min:"1" max:"512"` // Optional
+}
+
+type InstallationEmissionsType struct {
+	OverallEmissions ConstrainedDecimal `xml:"OverallEmissions"`
+	TotalDirect      ConstrainedDecimal `xml:"TotalDirect"`
+	TotalIndirect    ConstrainedDecimal `xml:"TotalIndirect"`
+	MeasurementUnit  ConstrainedString  `xml:"MeasurementUnit" min:"1" max:"5"`
+}
+
+type IndirectEmissionsType struct {
+	DeterminationType         ConstrainedString  `xml:"DeterminationType" min:"1" max:"5"`
+	EmissionFactorSource      *ConstrainedString `xml:"EmissionFactorSource" min:"1" max:"5"` // Optional
+	EmissionFactor            *ConstrainedString `xml:"EmissionFactor" min:"1" max:"165"`     // Optional, DECIMAL165 represented as string
+	SpecificEmbeddedEmissions ConstrainedDecimal `xml:"SpecificEmbeddedEmissions"`
+	MeasurementUnit           ConstrainedString  `xml:"MeasurementUnit" min:"1" max:"5"`
+	ElectricityConsumed       *ConstrainedString `xml:"ElectricityConsumed" min:"1" max:"52"` // Optional, DECIMAL52 represented as string
+	ElectricitySource         ConstrainedString  `xml:"ElectricitySource" min:"1" max:"5"`
+	OtherSourceIndication     *ConstrainedString `xml:"OtherSourceIndication" min:"1" max:"256"`     // Optional
+	EmissionFactorSourceValue *ConstrainedString `xml:"EmissionFactorSourceValue" min:"1" max:"512"` // Optional
+}
+
+type CarbonPriceDueType struct {
+	SequenceNumber      int                 `xml:"SequenceNumber"`
+	InstrumentType      ConstrainedString   `xml:"InstrumentType" min:"1" max:"5"`
+	LegalActDescription ConstrainedString   `xml:"LegalActDescription" min:"1" max:"512"`
+	Amount              ConstrainedDecimal  `xml:"Amount"`
+	Currency            ConstrainedString   `xml:"Currency" min:"1" max:"3"`
+	ExchangeRate        ConstrainedString   `xml:"ExchangeRate" min:"1" max:"3"`
+	EURO                ConstrainedDecimal  `xml:"EURO"`
+	Country             ConstrainedString   `xml:"Country" min:"2" max:"2"`
+	ProductsCovered     ProductsCoveredType `xml:"ProductsCovered"`
+}
+
+type ProductsCoveredType struct {
+	SequenceNumber           int                `xml:"SequenceNumber"`
+	Type                     ConstrainedString  `xml:"Type" min:"1" max:"8"`
+	CN                       *ConstrainedString `xml:"CN" min:"1" max:"8"`                         // Optional, assuming NUMERIC8 can be represented as string
+	QuantityCovered          ConstrainedString  `xml:"QuantityCovered" min:"1" max:"165"`          // DECIMAL165 as string
+	QuantityCoveredFreeAloc  ConstrainedString  `xml:"QuantityCoveredFreeAloc" min:"1" max:"165"`  // DECIMAL165 as string
+	SupplementaryInformation *ConstrainedString `xml:"SupplementaryInformation" min:"1" max:"256"` // Optional
+	AdditionalInformation    *ConstrainedString `xml:"AdditionalInformation" min:"1" max:"512"`    // Optional
+	Measure                  MeasureType        `xml:"Measure"`
+}
+
+type RemarksEmissionsType struct {
+	SequenceNumber        int               `xml:"SequenceNumber"`
+	AdditionalInformation ConstrainedString `xml:"AdditionalInformation" min:"1" max:"512"`
 }
 
 type Error struct {
@@ -45,312 +321,4 @@ type Error struct {
 	ErrorDetail string      `json:"error,omitempty"`
 	Hints       []string    `json:"hints,omitempty"`
 	Details     interface{} `json:"details,omitempty"`
-}
-
-type QReport struct {
-	// XMLName               xml.Name `xml:"QReport"`
-	SubmissionDate DateTime
-	DraftReportId  STRING22
-	// ReportId              STRING22
-	ReportingPeriod       STRING2
-	Year                  NUMERIC4
-	TotalImported         int
-	TotalEmissions        DECIMAL165
-	Declarant             DeclarantType
-	Representative        *RepresentativeType
-	Importer              *ImporterType
-	NationalCompetentAuth NationalCompetentAuthType
-	Signatures            SignaturesType
-	Remarks               *RemarksType
-	ImportedGood          ImportedGood
-}
-
-type DeclarantType struct {
-	IdentificationNumber STRING17
-	Name                 STRING70
-	Role                 STRING5
-	ActorAddress         AddressType
-}
-
-type ImporterType struct {
-	IdentificationNumber STRING17
-	Name                 STRING70
-	ImporterAddress      AddressType
-}
-
-type RepresentativeType struct {
-	IdentificationNumber  STRING17
-	Name                  STRING70
-	RepresentativeAddress AddressType
-}
-type AddressType struct {
-	Country              STRING2
-	SubDivision          *STRING35 // Optional field
-	City                 STRING35
-	Street               *STRING70 // Optional field
-	StreetAdditionalLine *STRING70 // Optional field
-	Number               *STRING35 // Optional field
-	Postcode             *STRING17 // Optional field
-	POBox                *STRING70 // Optional field
-}
-
-type NationalCompetentAuthType struct {
-	ReferenceNumber STRING128
-}
-
-type SignaturesType struct {
-	ReportConfirmation                ReportConfirmationType
-	ApplicableMethodologyConfirmation *ApplicableMethodologyConfirmationType
-}
-
-type ReportConfirmationType struct {
-	GlobalDataConfirmation  XSBoolean
-	UseOfDataConfirmation   XSBoolean
-	SignatureDate           NUMERIC8
-	SignaturePlace          STRING128
-	Signature               STRING128
-	PositionOfPersonSending STRING128
-}
-
-type ApplicableMethodologyConfirmationType struct {
-	OtherApplicableReportingMethodology XSBoolean
-}
-
-type RemarksType struct {
-	AdditionalInformation STRING128
-}
-
-type ImportedGood struct {
-	ItemNumber          int
-	Representative      *RepresentativeType
-	Importer            *ImporterType
-	CommodityCode       *CommodityCodeType
-	OriginCountry       OriginCountryType
-	ImportedQuantity    ImportedQuantityType
-	MeasureImported     MeasureType
-	TotalEmissions      TotalEmissionsType
-	SupportingDocuments SupportingDocument
-	Remarks             *RemarksType
-	GoodsEmissions      GoodsEmissionsType
-}
-type CommodityCodeType struct {
-	HsCode           STRING6
-	CnCode           STRING2
-	CommodityDetails CommodityDetailsType
-}
-
-type CommodityDetailsType struct {
-	Description STRING512
-}
-
-type OriginCountryType struct {
-	Country STRING2
-}
-
-type ImportedQuantityType struct {
-	SequenceNumber           int
-	Procedure                *ProcedureType
-	ImportArea               ImportAreaType
-	MeasureProcedureImported MeasureProcedureType
-	SpecialReferences        *SpecialReferencesType
-}
-
-type ProcedureType struct {
-	RequestedProc        STRING2
-	PreviousProc         *STRING2
-	InwardProcessingInfo InwardProcessingInfoType
-}
-
-type InwardProcessingInfoType struct {
-	MemberStateAuth     STRING2
-	DischargeBillWaiver NUMERIC1
-	Authorisation       STRING128
-	StartTime           NUMERIC8
-	EndTime             NUMERIC8
-	Deadline            NUMERIC8
-}
-
-type ImportAreaType struct {
-	ImportArea STRING5
-}
-
-type MeasureType struct {
-	NetMass            *DECIMAL166
-	SupplementaryUnits *DECIMAL166
-	MeasurementUnit    STRING5
-}
-
-type MeasureProcedureType struct {
-	Indicator          NUMERIC1
-	NetMass            *DECIMAL166
-	SupplementaryUnits *DECIMAL166
-	MeasurementUnit    STRING5
-}
-
-type SpecialReferencesType struct {
-	AdditionalInformation STRING128
-}
-
-type TotalEmissionsType struct {
-	EmissionsPerUnit XSDecimal
-	OverallEmissions XSDecimal
-	TotalDirect      XSDecimal
-	TotalIndirect    XSDecimal
-	MeasurementUnit  STRING5
-}
-
-type SupportingDocument struct {
-	SequenceNumber    int
-	Type              STRING8
-	Country           *STRING2
-	ReferenceNumber   STRING70
-	LineItemNumber    *NUMERIC5
-	IssuingAuthName   *STRING70
-	ValidityStartDate *DateTime
-	ValidityEndDate   *DateTime
-	Description       *STRING128
-	Attachment        *AttachmentType
-}
-
-type AttachmentType struct {
-	Filename STRING128
-	URI      *STRING128
-	MIME     STRING70
-	Binary   byte // base64Binary maps to byte in Go
-}
-
-type GoodsEmissionsType struct {
-	SequenceNumber             int
-	ProductionCountry          *STRING2
-	InstallationOperator       *InstallationOperatorType
-	Installation               *InstallationType
-	ProducedMeasure            MeasureType
-	InstallationEmissions      InstallationEmissionsType
-	DirectEmissions            DirectEmissionsType
-	IndirectEmissions          *IndirectEmissionsType
-	ProdMethodQualifyingParams ProdMethodQualifyingParamsType
-	SupportingDocuments        SupportingDocument
-	CarbonPriceDue             CarbonPriceDueType
-	RemarksEmissions           RemarksEmissionsType
-}
-
-type InstallationOperatorType struct {
-	OperatorId      STRING17
-	OperatorName    STRING70
-	OperatorAddress AddressType
-	ContactDetails  ContactDetailsType
-}
-
-type InstallationType struct {
-	InstallationId   STRING17
-	InstallationName STRING128
-	EconomicActivity *STRING128
-	Address          InstallationAddressType
-}
-
-type InstallationAddressType struct {
-	EstablishmentCountry STRING2
-	SubDivision          *STRING35
-	City                 *STRING35
-	Street               *STRING70
-	StreetAdditionalLine *STRING70
-	Number               *STRING35
-	Postcode             *STRING17
-	POBox                *STRING70
-	PlotParcelNumber     *STRING15
-	UNLOCODE             *STRING17
-	Latitude             *STRING17
-	Longitude            *STRING17
-	CoordinatesType      *STRING5
-}
-
-type ContactDetailsType struct {
-	Name  STRING70
-	Phone STRING35
-	Email STRING256
-}
-
-type ProdMethodQualifyingParamsType struct {
-	SequenceNumber               int
-	MethodId                     STRING5
-	MethodName                   STRING256
-	SteelMillNumber              *STRING256
-	AdditionalInformation        *STRING512
-	DirectQualifyingParameters   QualifyingParametersType
-	IndirectQualifyingParameters QualifyingParametersType
-}
-
-type QualifyingParametersType struct {
-	SequenceNumber        int
-	DeterminationType     STRING5
-	ParameterId           STRING5
-	ParameterName         STRING256
-	Description           *STRING256
-	ParameterValueType    STRING256
-	ParameterValue        STRING256
-	AdditionalInformation *STRING512
-}
-
-type InstallationEmissionsType struct {
-	OverallEmissions XSDecimal
-	TotalDirect      XSDecimal
-	TotalIndirect    XSDecimal
-	MeasurementUnit  STRING5
-}
-
-type DirectEmissionsType struct {
-	DeterminationType                  *STRING5
-	DeterminationTypeElectricity       *STRING5
-	ApplicableReportingTypeMethodology STRING5
-	ApplicableReportingMethodology     *STRING256
-	SpecificEmbeddedEmissions          *DECIMAL165
-	OtherSourceIndication              *STRING256
-	EmissionFactorSourceElectricity    *STRING5
-	EmissionFactor                     *DECIMAL165
-	ElectricityImported                *XSDecimal
-	TotalEmbeddedElectricityImported   *DECIMAL165
-	MeasurementUnit                    STRING5
-	EmissionFactorSourceValue          *STRING512
-	Justification                      *STRING512
-	ConditionalityFulfillment          *STRING512
-}
-
-type IndirectEmissionsType struct {
-	DeterminationType         STRING5
-	EmissionFactorSource      *STRING5
-	EmissionFactor            *DECIMAL165
-	SpecificEmbeddedEmissions XSDecimal
-	MeasurementUnit           STRING5
-	ElectricityConsumed       *DECIMAL52
-	ElectricitySource         STRING5
-	OtherSourceIndication     *STRING256
-	EmissionFactorSourceValue *STRING512
-}
-
-type CarbonPriceDueType struct {
-	SequenceNumber      int
-	InstrumentType      STRING5
-	LegalActDescription STRING512
-	Amount              XSDecimal
-	Currency            STRING3
-	ExchangeRate        STRING3
-	EURO                XSDecimal
-	Country             STRING2
-	ProductsCovered     ProductsCoveredType
-}
-
-type ProductsCoveredType struct {
-	SequenceNumber           int
-	Type                     STRING8
-	CN                       *NUMERIC8
-	QuantityCovered          DECIMAL165
-	QuantityCoveredFreeAloc  DECIMAL165
-	SupplementaryInformation *STRING256
-	AdditionalInformation    *STRING512
-	Measure                  MeasureType
-}
-
-type RemarksEmissionsType struct {
-	SequenceNumber        int
-	AdditionalInformation STRING512
 }

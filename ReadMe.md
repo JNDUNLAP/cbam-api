@@ -16,11 +16,22 @@ CBAM-API is a open-source platform designed to streamline emissions management a
 - **Modern Endpoints**: Convert EU's XML reports into dynamic REST endpoints for seamless data updates.
 - **Custom Validation**: Validate entire reports against EU standards at the character level.
 
+
+## Methodology
+
+- The EU CBAM has intensive requirements.
+- CBAM requirements are defined to the character level.
+- CBAM-API centralizes report  requirements, apply these constraints, and returns validated JSON.
+
+![Methodology](https://github.com/JNDUNLAP/cbam-api/assets/125301054/c6177062-d6f3-4b6d-b10d-7e9dba8f021d)
+
 ## Dependencies
 
+- `github.com/cosmtrek/air`
 - `github.com/joho/godotenv`
 - `go.mongodb.org/mongo-driver`
-- `https://github.com/cosmtrek/air`
+
+
 
 ## Getting Started
 
@@ -45,7 +56,7 @@ CBAM-API is a open-source platform designed to streamline emissions management a
     APP_USER=some_username
     BUILD_TARGET=development
     # BUILD_TARGET=production
-    MONGO_ROOT_USERNAME=admin
+    MONGO_ROOT_USERNAME=your_admin_username
     MONGO_ROOT_PASSWORD=super_secret_password
     MONGO_HOST=mongodb
     MONGO_PORT=27017
@@ -55,7 +66,7 @@ CBAM-API is a open-source platform designed to streamline emissions management a
 
 ### Usage
 
-- **Build and Run**:
+- **Build and Run Locally**:
 
     ```sh
     docker-compose up --build
