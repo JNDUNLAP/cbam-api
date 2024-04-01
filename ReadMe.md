@@ -32,8 +32,6 @@ CBAM-API is a open-source platform designed to streamline emissions management a
 5. Convert Data to JSON
 
 
-![Methodology](https://github.com/JNDUNLAP/cbam-api/assets/125301054/c6177062-d6f3-4b6d-b10d-7e9dba8f021d)
-
 ## Dependencies
 
 - `github.com/cosmtrek/air`
