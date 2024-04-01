@@ -11,7 +11,7 @@ import (
 
 func TestUnmarshalQReport(t *testing.T) {
 
-	xmlFile, err := ioutil.ReadFile("files/xml/report/Sample_CBAM_Quarterly_Report.xml")
+	xmlFile, err := ioutil.ReadFile("files/xml/Sample_CBAM_Quarterly_Report.xml")
 	if err != nil {
 		t.Fatalf("Failed to read XML file: %v", err)
 	}

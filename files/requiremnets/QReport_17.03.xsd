@@ -16,7 +16,7 @@
             <xs:element name="ReportingPeriod" type="an2"/>
             <xs:element name="Year" type="n4"/>
             <xs:element name="TotalImported" type="n..5"/>
-            <xs:element name="TotalEmissions" type="dec16-5"/>
+            <xs:element name="TotalEmissions" type="dec16-7"/>
             <xs:element name="Declarant" type="DeclarantType"/>
             <xs:element name="Representative" type="RepresentativeType" minOccurs="0"/>
             <xs:element name="Importer" type="ImporterType" minOccurs="0"/>
@@ -56,7 +56,7 @@
     <xs:complexType name="SignaturesType">
         <xs:sequence>
             <xs:element name="ReportConfirmation" type="ReportConfirmationType"/>
-            <xs:element name="ApplicableMethdologyConfirmation" type="ApplicableMethodologyConfirmationType" minOccurs="0"/>
+            <xs:element name="ApplicableMethodologyConfirmation" type="ApplicableMethodologyConfirmationType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ReportConfirmationType">
@@ -189,7 +189,7 @@
         <xs:sequence>
             <xs:element name="Filename" type="an..256"/>
             <xs:element name="URI" type="an..2048" minOccurs="0"/>
-            <xs:element name="MIME" type="an..70"/>
+            <xs:element name="MIME" type="an..71"/>
             <xs:element name="Binary" type="xs:base64Binary"/>
         </xs:sequence>
     </xs:complexType>
@@ -305,12 +305,12 @@
             <xs:element name="DeterminationTypeElectricity" type="an..5" minOccurs="0"/>
             <xs:element name="ApplicableReportingTypeMethodology" type="an..5"/>
             <xs:element name="ApplicableReportingMethodology" type="an..256" minOccurs="0"/>
-            <xs:element name="SpecificEmbeddedEmissions" type="dec16-5" minOccurs="0"/>
+            <xs:element name="SpecificEmbeddedEmissions" type="dec16-7" minOccurs="0"/>
             <xs:element name="OtherSourceIndication" type="an..256" minOccurs="0"/>
             <xs:element name="EmissionFactorSourceElectricity" type="an..5" minOccurs="0"/>
             <xs:element name="EmissionFactor" type="dec16-5" minOccurs="0"/>
             <xs:element name="ElectricityImported" type="xs:decimal" minOccurs="0"/>
-            <xs:element name="TotalEmbeddedElectricityImported" type="dec16-5" minOccurs="0"/>
+            <xs:element name="TotalEmbeddedElectricityImported" type="dec16-7" minOccurs="0"/>
             <xs:element name="MeasurementUnit" type="an..5"/>
             <xs:element name="EmissionFactorSourceValue" type="an..512" minOccurs="0"/>
             <xs:element name="Justification" type="an..512" minOccurs="0"/>
@@ -337,7 +337,7 @@
             <xs:element name="LegalActDescription" type="an..512"/>
             <xs:element name="Amount" type="xs:decimal"/>
             <xs:element name="Currency" type="a3"/>
-            <xs:element name="ExchangeRate" type="an..2"/>
+            <xs:element name="ExchangeRate" type="an..5"/>
             <xs:element name="EURO" type="xs:decimal"/>
             <xs:element name="Country" type="a2"/>
             <xs:element name="ProductsCovered" type="ProductsCoveredType" minOccurs="0" maxOccurs="9"/>

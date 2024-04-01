@@ -46,6 +46,12 @@
             <xs:maxLength value="70"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="an..71">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="71"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="an..5">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
@@ -145,6 +151,12 @@
         <xs:restriction base="xs:decimal">
             <xs:totalDigits value="7"/>
             <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="dec16-7">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="16"/>
+            <xs:fractionDigits value="7"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="dec16-6">
