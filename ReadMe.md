@@ -23,7 +23,7 @@ CBAM-API is a open-source platform designed to streamline emissions management a
 - CBAM requirements are defined to the character level.
 - CBAM-API centralizes report  requirements, apply these constraints, and returns validated JSON.
 
-[Centralized Requirements](https://github.com/JNDUNLAP/cbam-api/tree/main/files/requirements)
+[Centralized Requirements](https://github.com/JNDUNLAP/cbam-api/tree/main/files/requiremnets)
 
 1. Define Report Data Model with Constraints
 2. Read XML into Memory
