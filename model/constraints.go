@@ -75,50 +75,49 @@ func isCustomType(field reflect.Value) bool {
 }
 
 func applyConstraintsToField(field reflect.Value, structField reflect.StructField, path string) error {
-	constraints := extractConstraints(structField)
+	xmlTagName := structField.Tag.Get("xml")
+	xmlFieldName := strings.Split(xmlTagName, ",")[0]
 
-	// Initialize nil pointer fields to their zero value if needed
-	if field.Kind() == reflect.Ptr && field.IsNil() {
-		newInstance := reflect.New(structField.Type.Elem())
-		field.Set(newInstance)
-		field = newInstance.Elem() // Update field to reference the new instance
+	minTag := structField.Tag.Get("min")
+	maxTag := structField.Tag.Get("max")
+
+	var min, max int
+	var err error
+
+	if minTag != "" {
+		min, err = strconv.Atoi(minTag)
+		if err != nil {
+			log.Printf("Warning: Invalid 'min' constraint for XML field '%s' (Go field '%s'). Error: %v\n", xmlFieldName, structField.Name, err)
+		}
+	}
+	if maxTag != "" {
+		max, err = strconv.Atoi(maxTag)
+		if err != nil {
+			log.Printf("Warning: Invalid 'max' constraint for XML field '%s' (Go field '%s'). Error: %v\n", xmlFieldName, structField.Name, err)
+		}
 	}
 
-	// Check if the field implements ConstraintSetter and apply constraints
-	if setter, ok := extractSetter(field); ok {
-		if err := setter.ApplyConstraints(constraints); err != nil {
-			log.Printf("Error applying constraints to field '%s': %v\n", path, err)
-			return err
+	if field.Kind() == reflect.Ptr && field.IsNil() {
+		if structField.Type.Elem() == reflect.TypeOf(ConstrainedString{}) {
+			field.Set(reflect.New(structField.Type.Elem()))
 		}
-		if err := setter.ValidateConstraints(); err != nil {
-			log.Printf("Validation error for field '%s': %v\n", path, err)
-			return err
+	}
+
+	if field.CanAddr() && field.Addr().CanInterface() {
+		if setter, ok := field.Addr().Interface().(ConstraintSetter); ok {
+			// log.Printf("Applying constraints [Min: %d, Max: %d] to XML field '%s' ('%s')\n", min, max, xmlFieldName, structField.Name)
+			setter.SetConstraints(min, max)
+			setter.ValidateConstraints()
+		} else if field.CanInterface() {
+			if setter, ok := field.Interface().(ConstraintSetter); ok {
+				// log.Printf("Applying constraints [Min: %d, Max: %d] to XML field '%s' ('%s')\n", min, max, xmlFieldName, structField.Name)
+				setter.SetConstraints(min, max)
+				setter.ValidateConstraints()
+			}
 		}
 	}
 
 	return nil
-}
-func extractSetter(field reflect.Value) (ConstraintSetter, bool) {
-	if field.CanAddr() && field.Addr().CanInterface() {
-		if setter, ok := field.Addr().Interface().(ConstraintSetter); ok {
-			return setter, true
-		}
-	}
-	if field.CanInterface() {
-		if setter, ok := field.Interface().(ConstraintSetter); ok {
-			return setter, true
-		}
-	}
-	return nil, false
-}
-func extractConstraints(field reflect.StructField) map[string]string {
-	constraints := make(map[string]string)
-	for _, key := range []string{"min", "max", "totalDigits", "fracDigits"} {
-		if value, ok := field.Tag.Lookup(key); ok {
-			constraints[key] = value
-		}
-	}
-	return constraints
 }
 
 func processSliceOrArray(field reflect.Value, path string) error {
@@ -138,7 +137,7 @@ func processSliceOrArray(field reflect.Value, path string) error {
 }
 
 type ConstraintSetter interface {
-	ApplyConstraints(constraints map[string]string) error
+	SetConstraints(min, max int)
 	ValidateConstraints() error
 }
 
@@ -150,65 +149,4 @@ func (c *ConstrainedString) SetConstraints(min, max int) {
 func (c *ConstrainedInt) SetConstraints(min, max int) {
 	c.Min = min
 	c.Max = max
-}
-
-func (c *ConstrainedString) ValidateConstraints() error {
-	if c.Min != 0 || c.Max != 0 {
-		valueLength := len(c.Value)
-		if valueLength < c.Min || valueLength > c.Max {
-			err := fmt.Errorf("ERROR: length %d is out of bounds [%d, %d]", valueLength, c.Min, c.Max)
-			c.ErrorDetail = err.Error()
-			return err
-		}
-	}
-	c.ErrorDetail = ""
-	return nil
-}
-
-func (c *ConstrainedInt) ValidateConstraints() error {
-	valueStr := strconv.Itoa(c.Value)
-	valueLength := len(valueStr)
-	if valueLength < c.Min || valueLength > c.Max {
-		err := fmt.Errorf("ERROR: length %d is out of bounds [%d, %d]", valueLength, c.Min, c.Max)
-		c.ErrorDetail = err.Error()
-		return err
-	}
-	c.ErrorDetail = ""
-	return nil
-}
-
-func (c *ConstrainedDecimal) ValidateConstraints() error {
-	if c.Value == nil {
-		return fmt.Errorf("null")
-	}
-
-	// Convert to string to check total and fractional digits.
-	valStr := c.Value.Text('f', -1) // Get string representation with full precision.
-	parts := strings.Split(valStr, ".")
-	totalDigits := len(parts[0])
-	fracDigits := 0
-	if len(parts) > 1 {
-		fracDigits = len(parts[1])
-	}
-
-	// Validate against the totalDigits and fracDigits constraints.
-	if totalDigits > c.TotalDigits || fracDigits > c.FracDigits {
-		c.ErrorDetail = fmt.Sprintf("value %s exceeds allowed digits (total: %d, fractional: %d)", valStr, c.TotalDigits, c.FracDigits)
-		return fmt.Errorf(c.ErrorDetail)
-	}
-
-	return nil
-}
-
-func (c *ConstrainedDecimal) ApplyConstraints(constraints map[string]string) {
-	if totalDigits, ok := constraints["totalDigits"]; ok {
-		if td, err := strconv.Atoi(totalDigits); err == nil {
-			c.TotalDigits = td
-		}
-	}
-	if fracDigits, ok := constraints["fracDigits"]; ok {
-		if fd, err := strconv.Atoi(fracDigits); err == nil {
-			c.FracDigits = fd
-		}
-	}
 }

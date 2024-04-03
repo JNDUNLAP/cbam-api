@@ -85,14 +85,6 @@ func (m *MongoDBClient) DeleteReports(collectionName string) error {
 	return nil
 }
 
-// func SetupDatabase(MongoUri, dataName string) *MongoDBClient {
-// 	client, err := DBClient(MongoUri, dataName)
-// 	if err != nil {
-// 		log.Fatalf("Failed to connect to MongoDB: %v", err)
-// 	}
-// 	return client
-// }
-
 func SetupDatabase(mongoURI string) (*MongoDBClient, error) {
 	client, err := DBClient(mongoURI)
 	if err != nil {

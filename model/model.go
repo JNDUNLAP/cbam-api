@@ -7,13 +7,12 @@ import (
 //
 
 type QReport struct {
-	XMLName         xml.Name          `xml:"http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1 QReport"`
-	SubmissionDate  DateTimeFull      `xml:"SubmissionDate"`
-	ReportId        ConstrainedString `xml:"ReportId"`
-	ReportingPeriod ConstrainedString `xml:"ReportingPeriod" min:"2" max:"2"`
-	Year            ConstrainedInt    `xml:"Year" min:"4" max:"4"`
-	TotalImported   ConstrainedInt    `xml:"TotalImported" min:"1" max:"999"`
-	// TotalEmissions        TotalEmissionsType        `xml:"TotalEmissions"`
+	XMLName               xml.Name                  `xml:"http://xmlns.ec.eu/BusinessObjects/CBAM/Types/V1 QReport"`
+	SubmissionDate        DateTimeFull              `xml:"SubmissionDate"`
+	ReportId              ConstrainedString         `xml:"ReportId"`
+	ReportingPeriod       ConstrainedString         `xml:"ReportingPeriod" min:"2" max:"2"`
+	Year                  ConstrainedInt            `xml:"Year" min:"4" max:"4"`
+	TotalImported         ConstrainedInt            `xml:"TotalImported" min:"1" max:"999"`
 	Declarant             DeclarantType             `xml:"Declarant"`
 	Representative        *RepresentativeType       `xml:"Representative"`
 	Importer              *ImporterType             `xml:"Importer"`
@@ -21,6 +20,7 @@ type QReport struct {
 	Signatures            SignaturesType            `xml:"Signatures"`
 	Remarks               *RemarksType              `xml:"Remarks"`
 	ImportedGood          ImportedGood              `xml:"ImportedGood"`
+	ErrorMessages         []string
 }
 
 type DeclarantType struct {
@@ -81,7 +81,7 @@ type RemarksType struct {
 }
 
 type ImportedGood struct {
-	ItemNumber          int                  `xml:"ItemNumber"`
+	ItemNumber          ConstrainedInt       `xml:"ItemNumber" min:"1" max:"99"`
 	Representative      *RepresentativeType  `xml:"Representative"` // Optional, no min/max applicable
 	Importer            *ImporterType        `xml:"Importer"`       // Optional, no min/max applicable
 	CommodityCode       *CommodityCodeType   `xml:"CommodityCode"`  // Optional, no min/max applicable
@@ -109,7 +109,7 @@ type OriginCountryType struct {
 }
 
 type ImportedQuantityType struct {
-	SequenceNumber           int                    `xml:"SequenceNumber"`
+	SequenceNumber           ConstrainedInt         `xml:"SequenceNumber" min:"1" max:"99"`
 	Procedure                *ProcedureType         `xml:"Procedure"`
 	ImportArea               ImportAreaType         `xml:"ImportArea"`
 	MeasureProcedureImported MeasureProcedureType   `xml:"MeasureProcedureImported"`
@@ -161,7 +161,7 @@ type TotalEmissionsType struct {
 }
 
 type SupportingDocument struct {
-	SequenceNumber    int                `xml:"SequenceNumber"`
+	SequenceNumber    ConstrainedInt     `xml:"SequenceNumber" min:"1" max:"99"`
 	Type              ConstrainedString  `xml:"Type" min:"8" max:"8"`
 	Country           *ConstrainedString `xml:"Country" min:"2" max:"2"` // Optional
 	ReferenceNumber   ConstrainedString  `xml:"ReferenceNumber" min:"1" max:"70"`
@@ -177,10 +177,10 @@ type AttachmentType struct {
 	Filename ConstrainedString  `min:"1" max:"128"`
 	URI      *ConstrainedString `min:"1" max:"128"`
 	MIME     ConstrainedString  `min:"1" max:"700"`
-	Binary   byte               // base64Binary maps to byte in Go
+	Binary   byte               `json:"binary,omitempty"`
 }
 type GoodsEmissionsType struct {
-	SequenceNumber             int                            `xml:"SequenceNumber"`
+	SequenceNumber             ConstrainedInt                 `xml:"SequenceNumber" min:"1" max:"99"`
 	ProductionCountry          *ConstrainedString             `xml:"ProductionCountry" min:"2" max:"2"` // Optional
 	InstallationOperator       *InstallationOperatorType      `xml:"InstallationOperator"`              // Optional
 	Installation               *InstallationType              `xml:"Installation"`                      // Optional
@@ -248,7 +248,7 @@ type ContactDetailsType struct {
 }
 
 type ProdMethodQualifyingParamsType struct {
-	SequenceNumber               int                      `xml:"SequenceNumber"`
+	SequenceNumber               ConstrainedInt           `xml:"SequenceNumber" min:"1" max:"99"`
 	MethodId                     ConstrainedString        `xml:"MethodId" min:"1" max:"5"`
 	MethodName                   ConstrainedString        `xml:"MethodName" min:"1" max:"256"`
 	SteelMillNumber              *ConstrainedString       `xml:"SteelMillNumber" min:"1" max:"256"`       // Optional
@@ -258,7 +258,7 @@ type ProdMethodQualifyingParamsType struct {
 }
 
 type QualifyingParametersType struct {
-	SequenceNumber        int                `xml:"SequenceNumber"`
+	SequenceNumber        ConstrainedInt     `xml:"SequenceNumber" min:"1" max:"99"`
 	DeterminationType     ConstrainedString  `xml:"DeterminationType" min:"1" max:"5"`
 	ParameterId           ConstrainedString  `xml:"ParameterId" min:"1" max:"5"`
 	ParameterName         ConstrainedString  `xml:"ParameterName" min:"1" max:"256"`
@@ -288,7 +288,7 @@ type IndirectEmissionsType struct {
 }
 
 type CarbonPriceDueType struct {
-	SequenceNumber      int                 `xml:"SequenceNumber"`
+	SequenceNumber      ConstrainedInt      `xml:"SequenceNumber" min:"1" max:"99"`
 	InstrumentType      ConstrainedString   `xml:"InstrumentType" min:"1" max:"5"`
 	LegalActDescription ConstrainedString   `xml:"LegalActDescription" min:"1" max:"512"`
 	Amount              ConstrainedDecimal  `xml:"Amount"`
@@ -300,7 +300,7 @@ type CarbonPriceDueType struct {
 }
 
 type ProductsCoveredType struct {
-	SequenceNumber           int                `xml:"SequenceNumber"`
+	SequenceNumber           ConstrainedInt     `xml:"SequenceNumber" min:"1" max:"99"`
 	Type                     ConstrainedString  `xml:"Type" min:"1" max:"8"`
 	CN                       *ConstrainedString `xml:"CN" min:"1" max:"8"`                         // Optional, assuming NUMERIC8 can be represented as string
 	QuantityCovered          ConstrainedString  `xml:"QuantityCovered" min:"1" max:"165"`          // DECIMAL165 as string
@@ -311,7 +311,7 @@ type ProductsCoveredType struct {
 }
 
 type RemarksEmissionsType struct {
-	SequenceNumber        int               `xml:"SequenceNumber"`
+	SequenceNumber        ConstrainedInt    `xml:"SequenceNumber" min:"1" max:"99"`
 	AdditionalInformation ConstrainedString `xml:"AdditionalInformation" min:"1" max:"512"`
 }
 
