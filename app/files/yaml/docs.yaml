@@ -1,0 +1,518 @@
+openapi: 3.0.3
+info:
+  title: CBAM API
+  description: Carbon Border Adjustment Mechanism (CBAM) API
+  version: 1.0.0
+paths:
+  /reports:
+    get:
+      summary: List All Quarterly Reports
+      description: Returns a list of all quarterly reports.
+      responses:
+        '200':
+          description: A list of quarterly reports
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QReport'
+        '400':
+          description: Bad request, such as invalid query parameters.
+        '500':
+          description: Internal Server Error if there's an issue fetching the reports.
+
+
+
+
+
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:  # This is an example. Adjust according to your API's authentication mechanism.
+      type: apiKey
+      in: header
+      name: X-API-Key
+  schemas:
+    QReport:
+      type: object
+      properties:
+        SubmissionDate:
+          type: string
+          format: date
+        ReportId:
+          type: string
+        ReportingPeriod:
+          type: string
+        Year:
+          type: string
+        Declarant:
+          $ref: '#/components/schemas/Declarant'
+        Importer:
+          $ref: '#/components/schemas/Importer'
+        NationalCompetentAuth:
+          $ref: '#/components/schemas/NationalCompetentAuth'
+        Signatures:
+          $ref: '#/components/schemas/Signatures'
+        ImportedGoods:
+          $ref: '#/components/schemas/ImportedGoods'
+    Declarant:
+      type: object
+      properties:
+        IdentificationNumber:
+          type: string
+        Name:
+          type: string
+        Role:
+          type: string
+        ActorAddress:
+          $ref: '#/components/schemas/Address'
+    Importer:
+      type: object
+      properties:
+        IdentificationNumber:
+          type: string
+        Name:
+          type: string
+        ImporterAddress:
+          $ref: '#/components/schemas/Address'
+    Address:
+      type: object
+      properties:
+        Country:
+          type: string
+        SubDivision:
+          type: string
+        City:
+          type: string
+        Street:
+          type: string
+        StreetAdditionalLine:
+          type: string
+        Number:
+          type: string
+          description: "Represented as a string to accommodate decimal values."
+        Postcode:
+          type: string
+        POBox:
+          type: string
+    NationalCompetentAuth:
+      type: object
+      properties:
+        ReferenceNumber:
+          type: string
+
+    Signatures:
+      type: object
+      properties:
+        ReportConfirmation:
+          $ref: '#/components/schemas/ReportConfirmation'
+        ApplicableMethodologyConfirmation:
+          $ref: '#/components/schemas/ApplicableMethodologyConfirmation'
+          
+    ReportConfirmation:
+      type: object
+      properties:
+        GlobalDataConfirmation:
+          type: boolean
+        UseOfDataConfirmation:
+          type: boolean
+        SignatureDate:
+          type: string
+          format: date
+        SignaturePlace:
+          type: string
+        Signature:
+          type: string
+        PositionOfPersonSending:
+          type: string
+          
+    ApplicableMethodologyConfirmation:
+      type: object
+      properties:
+        OtherApplicableReportingMethodology:
+          type: boolean
+    ImportedGoods:
+      type: object
+      properties:
+        ItemNumber:
+          type: string
+        CommodityCode:
+          $ref: '#/components/schemas/CommodityCode'
+        OriginCountry:
+          $ref: '#/components/schemas/OriginCountry'
+        ImportedQuantity:
+          $ref: '#/components/schemas/ImportedQuantity'
+        MeasureImported:
+          $ref: '#/components/schemas/MeasureImported'
+        TotalEmissions:
+          $ref: '#/components/schemas/TotalEmissions'
+        SupportingDocuments:
+          $ref: '#/components/schemas/SupportingDocument'
+        Remarks:
+          $ref: '#/components/schemas/Remarks'
+        GoodsEmissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GoodsEmission'
+
+    CommodityCode:
+      type: object
+      properties:
+        HsCode:
+          type: string
+        CnCode:
+          type: string
+        CommodityDetails:
+          $ref: '#/components/schemas/CommodityDetails'
+
+    CommodityDetails:
+      type: object
+      properties:
+        Description:
+          type: string
+    OriginCountry:
+      type: object
+      properties:
+        Country:
+          type: string
+
+    ImportedQuantity:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Representing decimal.Decimal as string for compatibility
+        Procedure:
+          $ref: '#/components/schemas/Procedure'
+        ImportArea:
+          $ref: '#/components/schemas/ImportArea'
+        MeasureProcedureImported:
+          $ref: '#/components/schemas/MeasureProcedureImported'
+        SpecialReferences:
+          $ref: '#/components/schemas/SpecialReferences'
+
+    Procedure:
+      type: object
+      properties:
+        RequestedProc:
+          type: string
+        PreviousProc:
+          type: string
+
+    ImportArea:
+      type: object
+      properties:
+        ImportArea:
+          type: string
+
+    MeasureImported:
+      type: object
+      properties:
+        NetMass:
+          type: string
+          description: The net mass of the imported goods.
+        MeasurementUnit:
+          type: string
+          description: The unit of measurement for the net mass (e.g., kilograms).
+
+    MeasureProcedureImported:
+      type: object
+      properties:
+        Indicator:
+          type: string
+        NetMass:
+          type: string
+        MeasurementUnit:
+          type: string
+
+    SpecialReferences:
+      type: object
+      properties:
+        AdditionalInformation:
+          type: string
+    TotalEmissions:
+      type: object
+      properties:
+        EmissionsPerUnit:
+          type: string
+        OverallEmissions:
+          type: string
+        TotalDirect:
+          type: string
+        TotalIndirect:
+          type: string
+        MeasurementUnit:
+          type: string
+
+    SupportingDocument:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Representing decimal.Decimal as string for compatibility
+        Type:
+          type: string
+        Country:
+          type: string
+        ReferenceNumber:
+          type: string
+        LineItemNumber:
+          type: string
+        IssuingAuthName:
+          type: string
+        ValidityStartDate:
+          type: string  # Assuming SimpleDate can be represented as string
+        ValidityEndDate:
+          type: string  # Assuming SimpleDate can be represented as string
+        Description:
+          type: string
+        Attachment:
+          $ref: '#/components/schemas/Attachment'
+
+    Remarks:
+      type: object
+      properties:
+        AdditionalInformation:
+          type: string
+    Attachment:
+      type: object
+      properties:
+        Filename:
+          type: string
+        MIME:
+          type: string
+    GoodsEmission:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        ProductionCountry:
+          type: string
+        InstallationOperator:
+          $ref: '#/components/schemas/InstallationOperator'
+        Installation:
+          $ref: '#/components/schemas/Installation'
+        ProducedMeasure:
+          $ref: '#/components/schemas/ProducedMeasure'
+        InstallationEmissions:
+          $ref: '#/components/schemas/InstallationEmissions'
+        DirectEmissions:
+          $ref: '#/components/schemas/DirectEmissions'
+        IndirectEmissions:
+          $ref: '#/components/schemas/IndirectEmissions'
+        ProdMethodQualifyingParams:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProdMethodQualifyingParams'
+        SupportingDocuments:
+          $ref: '#/components/schemas/SupportingDocument'
+        RemarksEmissions:
+          $ref: '#/components/schemas/RemarksEmissions'
+        CarbonPriceDue:
+          $ref: '#/components/schemas/CarbonPriceDue'
+
+    InstallationOperator:
+      type: object
+      properties:
+        OperatorId:
+          type: string
+        OperatorName:
+          type: string
+        OperatorAddress:
+          $ref: '#/components/schemas/Address'
+        ContactDetails:
+          $ref: '#/components/schemas/ContactDetails'
+
+    ContactDetails:
+      type: object
+      properties:
+        Name:
+          type: string
+        Phone:
+          type: string
+        Email:
+          type: string
+
+    Installation:
+      type: object
+      properties:
+        InstallationId:
+          type: string
+        InstallationName:
+          type: string
+        Address:
+          $ref: '#/components/schemas/InstallationAddress'
+    InstallationAddress:
+      type: object
+      properties:
+        EstablishmentCountry:
+          type: string
+        SubDivision:
+          type: string
+        City:
+          type: string
+        Street:
+          type: string
+        StreetAdditionalLine:
+          type: string
+        Number:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        Postcode:
+          type: string
+        POBox:
+          type: string
+        PlotParcelNumber:
+          type: string
+        Latitude:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        Longitude:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        CoordinatesType:
+          type: string
+
+    ProducedMeasure:
+      type: object
+      properties:
+        NetMass:
+          type: string
+        MeasurementUnit:
+          type: string
+
+    InstallationEmissions:
+      type: object
+      properties:
+        OverallEmissions:
+          type: string
+        TotalDirect:
+          type: string
+        TotalIndirect:
+          type: string
+        MeasurementUnit:
+          type: string
+
+    DirectEmissions:
+      type: object
+      properties:
+        DeterminationType:
+          type: string
+        ApplicableReportingTypeMethodology:
+          type: string
+        ApplicableReportingMethodology:
+          type: string
+        SpecificEmbeddedEmissions:
+          type: string
+        MeasurementUnit:
+          type: string
+
+    IndirectEmissions:
+      type: object
+      properties:
+        DeterminationType:
+          type: string
+        SpecificEmbeddedEmissions:
+          type: string
+        MeasurementUnit:
+          type: string
+        ElectricitySource:
+          type: string
+        OtherSourceIndication:
+          type: string
+    ProdMethodQualifyingParams:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        MethodId:
+          type: string
+        MethodName:
+          type: string
+        SteelMillNumber:
+          type: string
+        AdditionalInformation:
+          type: string
+        DirectQualifyingParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/QualifyingParameter'
+        IndirectQualifyingParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/QualifyingParameter'
+
+    QualifyingParameter:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        DeterminationType:
+          type: string
+        ParameterId:
+          type: string
+        ParameterName:
+          type: string
+        Description:
+          type: string
+        ParameterValueType:
+          type: string
+        ParameterValue:
+          type: string
+        AdditionalInformation:
+          type: string
+
+    RemarksEmissions:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        AdditionalInformation:
+          type: string
+
+    CarbonPriceDue:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        InstrumentType:
+          type: string
+        LegalActDescription:
+          type: string
+        Amount:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        Currency:
+          type: string
+        ExchangeRate:
+          type: string
+        EURO:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        Country:
+          type: string
+        ProductsCovered:
+          $ref: '#/components/schemas/ProductCovered'
+
+    ProductCovered:
+      type: object
+      properties:
+        SequenceNumber:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        Type:
+          type: string
+        CN:
+          type: string
+        QuantityCovered:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        QuantityCoveredFreeAloc:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        SupplementaryInformation:
+          type: string
+        AdditionalInformation:
+          type: string
+        Measure:
+          $ref: '#/components/schemas/ProductCoveredMeasure'
+
+    ProductCoveredMeasure:
+      type: object
+      properties:
+        NetMass:
+          type: string  # Assuming decimal.Decimal as string for compatibility
+        MeasurementUnit:
+          type: string
