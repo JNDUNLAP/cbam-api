@@ -33,11 +33,11 @@ type AddressType struct {
 	Country              ConstrainedString  `xml:"Country" min:"2" max:"2"`
 	SubDivision          *ConstrainedString `xml:"SubDivision" min:"1" max:"70"`
 	City                 ConstrainedString  `xml:"City" min:"1" max:"35"`
-	Street               *ConstrainedString `xml:"Street" min:"1" max:"70"`               // Optional
-	StreetAdditionalLine *ConstrainedString `xml:"StreetAdditionalLine" min:"1" max:"70"` // Optional
-	Number               *ConstrainedString `xml:"Number" min:"1" max:"35"`               // Optional
-	Postcode             *ConstrainedString `xml:"Postcode" min:"1" max:"17"`             // Optional
-	POBox                *ConstrainedString `xml:"POBox" min:"1" max:"70"`                // Optional
+	Street               *ConstrainedString `xml:"Street" min:"1" max:"70"`
+	StreetAdditionalLine *ConstrainedString `xml:"StreetAdditionalLine" min:"1" max:"70"`
+	Number               *ConstrainedString `xml:"Number" min:"1" max:"35"`
+	Postcode             *ConstrainedString `xml:"Postcode" min:"1" max:"17"`
+	POBox                *ConstrainedString `xml:"POBox" min:"1" max:"70"`
 }
 
 type ImporterType struct {
@@ -59,7 +59,7 @@ type NationalCompetentAuthType struct {
 type ReportConfirmationType struct {
 	GlobalDataConfirmation  bool              `xml:"GlobalDataConfirmation"`
 	UseOfDataConfirmation   bool              `xml:"UseOfDataConfirmation"`
-	SignatureDate           ConstrainedString `xml:"SignatureDate" min:"10" max:"10"`
+	SignatureDate           SimpleDate        `xml:"SignatureDate"`
 	SignaturePlace          ConstrainedString `xml:"SignaturePlace" min:"1" max:"128"`
 	Signature               ConstrainedString `xml:"Signature" min:"1" max:"128"`
 	PositionOfPersonSending ConstrainedString `xml:"PositionOfPersonSending" min:"1" max:"128"`
@@ -132,20 +132,20 @@ type InwardProcessingInfoType struct {
 }
 
 type ImportAreaType struct {
-	ImportArea ConstrainedString `xml:"ImportArea" min:"5" max:"5"`
+	ImportArea ConstrainedString `xml:"ImportArea" min:"2" max:"2"`
 }
 
 type MeasureType struct {
 	NetMass            *ConstrainedDecimal `xml:"NetMass"  min:"1" max:"999"`
 	SupplementaryUnits *ConstrainedDecimal `xml:"SupplementaryUnits"`
-	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"5" max:"5"`
+	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"1" max:"5"`
 }
 
 type MeasureProcedureType struct {
 	Indicator          ConstrainedString   `xml:"Indicator" min:"1" max:"1"`
 	NetMass            *ConstrainedDecimal `xml:"NetMass" min:"1" max:"999"`
 	SupplementaryUnits *ConstrainedDecimal `xml:"SupplementaryUnits"`
-	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"5" max:"5"`
+	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"1" max:"5"`
 }
 
 type SpecialReferencesType struct {
@@ -162,7 +162,7 @@ type TotalEmissionsType struct {
 
 type SupportingDocument struct {
 	SequenceNumber    ConstrainedInt     `xml:"SequenceNumber" min:"1" max:"99"`
-	Type              ConstrainedString  `xml:"Type" min:"8" max:"8"`
+	Type              ConstrainedString  `xml:"Type" min:"1" max:"8"`
 	Country           *ConstrainedString `xml:"Country" min:"2" max:"2"` // Optional
 	ReferenceNumber   ConstrainedString  `xml:"ReferenceNumber" min:"1" max:"70"`
 	LineItemNumber    *ConstrainedString `xml:"LineItemNumber" min:"5" max:"5"`   // Assuming NUMERIC5 implies length of 5
