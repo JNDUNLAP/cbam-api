@@ -142,7 +142,6 @@ type MeasureType struct {
 }
 
 type MeasureProcedureType struct {
-	Indicator          ConstrainedString   `xml:"Indicator" min:"1" max:"1"`
 	NetMass            *ConstrainedDecimal `xml:"NetMass" min:"1" max:"999" MinOccurs:"0"`
 	SupplementaryUnits *ConstrainedDecimal `xml:"SupplementaryUnits" MinOccurs:"0"`
 	MeasurementUnit    ConstrainedString   `xml:"MeasurementUnit" min:"1" max:"5"`

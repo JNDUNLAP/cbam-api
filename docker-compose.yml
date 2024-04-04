@@ -33,12 +33,12 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
 
-  python-script:
-    build: 
+  requirements_generator:
+    build:
       context: ./requirements_generator
       dockerfile: Dockerfile
     volumes:
-      - ./python-script:/python-script
+      - ./requirements_generator:/requirements_generator
     depends_on:
       - app
       - mongodb
