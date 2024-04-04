@@ -35,10 +35,10 @@ services:
 
   requirements_generator:
     build:
-      context: ./requirements_generator
+      context: ./gen
       dockerfile: Dockerfile
     volumes:
-      - ./requirements_generator:/requirements_generator
+      - ./gen:/gen
     depends_on:
       - app
       - mongodb
