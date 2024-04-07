@@ -49,12 +49,15 @@ func colorizeStatusCode(statusCode int) string {
 
 func LogRequest(handler HandlerFunc) HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request, params map[string]string) {
+
 		start := time.Now()
+
 		wrappedWriter := NewResponseWriter(w)
+
 		handler(wrappedWriter, r, params)
+
 		duration := time.Since(start)
 
-		log.Printf("[%s]: [%s], Duration: [%v]  -  %s",
-			r.Method, colorizeStatusCode(wrappedWriter.statusCode), duration, r.URL.Path)
+		log.Printf("[%s]: [%s], Duration: [%v]  -  %s", r.Method, colorizeStatusCode(wrappedWriter.statusCode), duration, r.URL.Path)
 	}
 }

@@ -4,13 +4,13 @@ import (
 	"cbam_api/model"
 	"encoding/xml"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"testing"
 )
 
 func TestUnmarshalQReport(t *testing.T) {
-	xmlFile, err := ioutil.ReadFile("files/xml/Sample_CBAM_Quarterly_Report.xml")
+	xmlFile, err := os.ReadFile("files/xml/Sample_CBAM_Quarterly_Report.xml")
 	if err != nil {
 		t.Fatalf("Failed to read XML file: %v", err)
 	}
@@ -20,7 +20,7 @@ func TestUnmarshalQReport(t *testing.T) {
 		t.Fatalf("Report XML processing failed: %v", err)
 	}
 
-	jsonData, err := model.CreateJSON(report, true)
+	jsonData, err := model.CreateJSON(report, false)
 	if err != nil {
 		log.Fatalf("Failed to marshal into JSON: %v", err)
 	}

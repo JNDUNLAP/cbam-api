@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build:
-      context: ./app
+      context: .
       target: ${BUILD_TARGET}
       dockerfile: Dockerfile
       args:
@@ -26,19 +26,9 @@ services:
       - ./log:/var/log/mongodb
     logging:
       driver: none
-
     ports:
       - "${MONGO_PORT:-27017}:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
 
-  requirements_generator:
-    build:
-      context: ./gen
-      dockerfile: Dockerfile
-    volumes:
-      - ./gen:/gen
-    depends_on:
-      - app
-      - mongodb

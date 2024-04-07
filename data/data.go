@@ -4,9 +4,7 @@ import (
 	"cbam_api/model"
 	"context"
 	"fmt"
-	"log"
 	"os"
-	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -41,24 +39,6 @@ func DBClient(mongoURI string) (*MongoDBClient, error) {
 	return &MongoDBClient{
 		Client: client,
 	}, nil
-}
-
-func (m *MongoDBClient) GetQReport(filter bson.M) (model.QReport, error) {
-	var qReport model.QReport
-	collection := m.Client.Database(m.dataName).Collection("test_report")
-
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
-	defer cancel()
-
-	err := collection.FindOne(ctx, filter).Decode(&qReport)
-	if err != nil {
-		if err == mongo.ErrNoDocuments {
-			return model.QReport{}, fmt.Errorf("no document found with the provided filter")
-		}
-		log.Println(err)
-		return model.QReport{}, fmt.Errorf("error fetching document: %w", err)
-	}
-	return qReport, nil
 }
 
 func UploadReport(ctx context.Context, report *model.QReport, m *MongoDBClient, collectionName string) error {

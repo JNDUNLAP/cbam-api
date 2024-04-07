@@ -1,6 +1,8 @@
 package model
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 type ErrorProvider interface {
 	Errors() []string
@@ -44,7 +46,7 @@ func (cs *ConstrainedDecimal) MarshalJSON() ([]byte, error) {
 	return json.Marshal(cs.Value)
 }
 
-func (cs *ConstrainedString) MarshalJSON() ([]byte, error) {
+func (cs *ConstrainedInt) MarshalJSON() ([]byte, error) {
 	if MarshalErrorsOnly {
 		if cs.ErrorDetail != "" {
 			return json.Marshal(cs.ErrorDetail)
@@ -54,7 +56,7 @@ func (cs *ConstrainedString) MarshalJSON() ([]byte, error) {
 	return json.Marshal(cs.Value)
 }
 
-func (cs *ConstrainedInt) MarshalJSON() ([]byte, error) {
+func (cs *ConstrainedString) MarshalJSON() ([]byte, error) {
 	if MarshalErrorsOnly {
 		if cs.ErrorDetail != "" {
 			return json.Marshal(cs.ErrorDetail)
